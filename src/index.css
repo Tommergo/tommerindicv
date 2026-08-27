@@ -117,7 +117,25 @@
   }
 
   .gold-glow {
-    box-shadow: 0 0 30px -5px hsl(43 96% 56% / 0.2);
+    box-shadow: 0 0 40px -8px hsl(16 100% 60% / 0.25);
+  }
+
+  .gradient-play {
+    background: var(--gradient-play);
+  }
+
+  .text-gradient-play {
+    background: var(--gradient-play);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .grid-noise {
+    background-image: linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(70% 60% at 50% 30%, black, transparent);
   }
 }
 
