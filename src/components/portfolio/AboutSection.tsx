@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { User, Zap } from "lucide-react";
+import { User, Zap, Rocket } from "lucide-react";
 
 const AboutSection = () => (
   <section id="about" className="section-padding">
@@ -12,20 +12,32 @@ const AboutSection = () => (
         className="max-w-3xl mx-auto"
       >
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold mb-6">
-            <User size={14} /> About Me
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-bold mb-6 uppercase tracking-wide">
+            <User size={14} /> About me
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Analyst brain, <span className="text-gradient-play">marketer energy</span>
+          </h2>
         </div>
-        <div className="bg-card rounded-2xl p-8 card-shadow border border-border gold-glow">
+        <div className="bg-card rounded-3xl p-8 card-shadow border border-border gold-glow">
           <p className="text-body text-base md:text-lg leading-relaxed">
-            I am a third-year Industrial Engineering & Information Systems student at Bar-Ilan University with a strong interest in data analysis, machine learning, and project leadership. My projects focus on solving real problems using data — from sports analytics and behavioral experiments to social initiatives adopted by public organizations.
+            I am a third-year Industrial Engineering &amp; Information Systems student at Bar-Ilan University.
+            My work lives where numbers meet decisions: cleaning and manipulating large datasets, finding the
+            trend or the discrepancy hiding inside them, and presenting it so a team can act the same day.
           </p>
           <div className="h-px bg-border my-6" />
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-3 mb-5">
             <Zap size={20} className="text-primary shrink-0 mt-0.5" />
             <p className="text-body text-base md:text-lg leading-relaxed">
-              Beyond analytics, I actively lead initiatives in student organizations and community projects, combining analytical thinking with leadership and execution.
+              I juggle several projects at once — studies, work and community initiatives — and I stay organized
+              under tight schedules and real budgets.
+            </p>
+          </div>
+          <div className="flex items-start gap-3">
+            <Rocket size={20} className="text-accent shrink-0 mt-0.5" />
+            <p className="text-body text-base md:text-lg leading-relaxed">
+              Mobile games are the product category I actually care about. Joining a growth team at a company
+              like Moon Active means optimizing something millions of people open every day.
             </p>
           </div>
         </div>
