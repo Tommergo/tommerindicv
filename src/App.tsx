@@ -10,6 +10,7 @@ import SportsAnalyticsPage from "./pages/SportsAnalyticsPage";
 import LeadershipPage from "./pages/LeadershipPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
+import GamePage from "./pages/GamePage";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/projects/sports-analytics" element={<SportsAnalyticsPage />} />
           <Route path="/leadership" element={<LeadershipPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/game" element={<GamePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
