@@ -7,7 +7,7 @@ import GameShowcaseSection from "@/components/portfolio/GameShowcaseSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
 
-const Index = () => (
+const ResumePage = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
     <main>
@@ -22,4 +22,4 @@ const Index = () => (
   </div>
 );
 
-export default Index;
+export default ResumePage;
