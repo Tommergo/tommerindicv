@@ -17,8 +17,30 @@ const PlayTab = () => {
     try {
       iframeRef.current?.contentDocument?.querySelectorAll("audio,video").forEach((m) => ((m as HTMLMediaElement).muted = next));
     } catch { /* ignore */ }
+    focusGame();
   };
-  const fullscreen = () => frameRef.current?.requestFullscreen?.();
+  // The game listens for keys on its own window, so the iframe must hold keyboard focus.
+  const focusGame = () => {
+    const frame = iframeRef.current;
+    if (!frame) return;
+    frame.focus({ preventScroll: true });
+    try {
+      frame.contentWindow?.focus();
+      (frame.contentDocument?.getElementById("game") as HTMLElement | null)?.focus({ preventScroll: true });
+    } catch { /* ignore */ }
+  };
+  // The game cancels pointerdown, which stops the browser from moving focus into the iframe on click,
+  // so focus it ourselves whenever the player presses inside the game.
+  const onGameLoad = () => {
+    focusGame();
+    try {
+      iframeRef.current?.contentDocument?.addEventListener("pointerdown", focusGame, true);
+    } catch { /* ignore */ }
+  };
+  const fullscreen = async () => {
+    try { await frameRef.current?.requestFullscreen?.(); } catch { /* ignore */ }
+    focusGame();
+  };
 
   return (
     <section className="max-w-6xl mx-auto">
@@ -33,7 +55,7 @@ const PlayTab = () => {
       <div ref={frameRef} className="adv-frame relative">
         <div className="relative aspect-video bg-[hsl(var(--adv-leather-dark))] rounded overflow-hidden border border-[hsl(var(--adv-gold)/0.4)]">
           {started ? (
-            <iframe ref={iframeRef} src={GAME_URL} title="Indy and the Temple of the Serpent" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen />
+            <iframe ref={iframeRef} src={GAME_URL} title="Indy and the Temple of the Serpent" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen onLoad={onGameLoad} />
           ) : (
             <button onClick={() => setStarted(true)} className="absolute inset-0 flex flex-col items-center justify-center gap-6 group">
               <Compass size={44} className="text-[hsl(var(--adv-gold-light))] group-hover:rotate-45 transition-transform duration-500" />
@@ -46,7 +68,7 @@ const PlayTab = () => {
               <div className="adv-paper p-6 max-w-md">
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="font-adv-display font-bold text-lg">Field Guide</h3>
-                  <button onClick={() => setHelp(false)} aria-label="Close help"><X size={20} /></button>
+                  <button onClick={() => { setHelp(false); focusGame(); }} aria-label="Close help"><X size={20} /></button>
                 </div>
                 <p className="font-adv-type text-sm leading-relaxed">Click inside the game to focus it. Use the keyboard (arrows / WASD) or touch controls. Explore, dodge traps, and find the relic. Press fullscreen for the full adventure.</p>
               </div>
