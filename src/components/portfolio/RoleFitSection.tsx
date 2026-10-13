@@ -20,7 +20,7 @@ const fits = [
     icon: Gauge,
     req: "Experience with KPI frameworks",
     proof:
-      "Defined and presented KPIs at Meir Medical Center that informed changes to the hospital's data-collection process.",
+      "Defined and presented the KPIs at Meir Medical Center that led the hospital to build emergency data-collection protocols.",
     color: "hsl(var(--adv-red))",
   },
   {
@@ -34,7 +34,7 @@ const fits = [
     icon: Presentation,
     req: "Presenting insights to non-technical stakeholders",
     proof:
-      "Presented findings to a hospital's senior management, and a budget-vs-results analysis to a sports club's leadership. 2nd place in the Sharks Innovation Competition, judged by entrepreneurs and academics.",
+      "Presented wartime findings to a hospital's senior management, and a budget-vs-results analysis to a sports club's leadership. 2nd place in the Sharks Innovation Competition, judged by entrepreneurs and academics.",
     color: "hsl(var(--primary))",
   },
   {

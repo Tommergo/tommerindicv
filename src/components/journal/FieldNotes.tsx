@@ -11,7 +11,7 @@ export const RESUME_PDF = "/Tommer_Goldstein_CV.pdf";
 export interface FieldNote { title: string; tag: string; note: string; to: string; img: string }
 
 export const dataProjects: FieldNote[] = [
-  { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital operational data alongside management and presented KPIs that informed changes to their data-collection process.", to: "/projects/meir-medical", img: imgMeir },
+  { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgMeir },
   { title: "Sports Data Analytics", tag: "Tableau · Python · Logistic Regression", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
   { title: "Badminton Performance Analytics", tag: "Python · Logistic Regression", note: "Used BWF World Tour data to find the in-match moments that decide who wins, and turned them into actions for coaches and players.", to: "/projects/badminton-ml", img: imgBadminton },
   { title: "Memory Game: Music & Attention", tag: "Experimental Design · ANOVA · Web Development", note: "Built a memory game and ran a 30-person within-subjects experiment on music and attention, tested with repeated measures ANOVA.", to: "/projects/memory-game", img: imgMemory },
