@@ -1,73 +1,26 @@
-# Welcome to your Lovable project
+# Remix of קורות חיים - דף נחיתה
 
-## Project info
+Create a modern portfolio landing page for a data analyst and industrial engineering student. Design style: modern tech portfolio, clean layout, soft shadows, rounded cards, professional but friendly. Color palette: white background, dark text, accent color blue or teal. Sections order: Hero → About → Skills → Projects → Leadership → Creative Projects → Contact Section 1 – Hero Title: Tomer Goldstein Data Analytics • Machine Learning • Project Leadership Subtitle: Industrial Engineering & Information Systems Student at Bar-Ilan University Description: I specialize in turning data into insights and insights into action. My work combines data analysis, machine learning, and real-world problem solving in domains such as sports analytics, behavioral experiments, and social initiatives. Buttons: View Projects Download CV Contact Me Optional small badges: Python Machine Learning Data Analytics Project Management Section 2 – About Me Title: About Me Text: I am a third-year Industrial Engineering & Information Systems student at Bar-Ilan University with a strong interest in data analysis, machine learning, and project leadership. My projects focus on solving real problems using data — from sports analytics and behavioral experiments to social initiatives adopted by public organizations. Beyond analytics, I actively lead initiatives in student organizations and community projects, combining analytical thinking with leadership and execution. Section 3 – Skills Title: Skills Create four skill groups with icons. Data & Analytics Python Pandas Statistical Analysis Data Visualization Machine Learning PCA Technology Web Development Data Collection Systems Experiment Design Data Processing Project Management Project Leadership Strategic Thinking Cross-team Collaboration Problem Solving Domains Sports Analytics Behavioral Research Social Innovation Section 4 – Featured Projects Display projects as cards. Each card includes: title problem methods tools impact Project 1 Face Data Analysis using PCA Problem How can we extract meaningful patterns from large datasets of human faces? Approach Used Principal Component Analysis (PCA) to analyze facial datasets and generate an average face representation while identifying dominant visual features. Tools Python NumPy PCA Outcome Demonstrated dimensionality reduction and pattern extraction from image datasets. Project 2 Memory Game Experiment – Music and Attention Problem Does background music influence attention and memory performance? Approach Developed a web-based memory game and collected behavioral data across different music conditions. Methods Statistical analysis of accuracy and reaction time. Outcome Analyzed correlations between music exposure and cognitive performance. Project 3 Sports Analytics – Bnei Herzliya Problem How can data improve decision making in youth sports organizations? Approach Analyzed participation data, budgets, performance indicators, and dropout rates for the Bnei Herzliya sports organization. Methods Statistical modeling data visualization regression analysis Impact Generated strategic recommendations for improving athlete retention and optimizing resource allocation. Award The project won 2nd place in the Sharks Innovation Competition. Project 4 Machine Learning for Badminton Performance Problem How can coaches use data to improve match strategies? Approach Analyzed tournament data from badminton competitions to identify patterns in performance. Methods Machine learning models statistical analysis Outcome Created a data-driven framework to guide training and match preparation. Project 5 Social Initiative – Training National Service Volunteers Problem Youth at risk require trained mentors. Solution Developed a training program for National Service volunteers to work with at-risk youth. Impact The initiative was adopted by the Jerusalem Municipality. Section 5 – Leadership Title Leadership & Organizational Experience Cards: Faculty Engineering Committee Active member in the faculty committee representing students and participating in academic decision processes. Student Event Planning Council Participating in planning large-scale student events and coordinating between different teams. Bar-Ilan Student Union Involved in initiatives improving student experience and campus life. Section 6 – Creative Projects Title Creative Leadership Text In addition to analytics, I lead creative projects including music production and event organization. Example Founder and guitarist of the blues-rock band Crocodile Bill, organizing live events, managing musicians, and leading creative production projects. These experiences strengthened skills in leadership, coordination, and project execution. Section 7 – Contact Title Let's Work Together Text Interested in collaboration, data projects, or analytics roles. Contact buttons: Email LinkedIn GitHub דברים שמומלץ להוסיף באתר (שיעשו אותו פי 3 יותר מרשים) 1️⃣ גרפים אמיתיים מהפרויקט של בני הרצליה. 2️⃣ תמונות dashboards זה מרשים מאוד למעסיקים. 3️⃣ GitHub קוד של: PCA memory game analysis notebooks טיפ קריטי בדף כזה צריך גם Section שנקרא: How I Work עם השלבים: Problem Data Collection Analysis Insight Action זה נראה מאוד מקצועי.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This project was built with [Lovable](https://lovable.dev).
 
-## How can I edit this code?
+**Live app**: https://tommerindicv.lovable.app
 
-There are several ways of editing your application.
+## Build with Lovable
 
-**Use Lovable**
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/848450dd-e1da-4799-92ff-ff2cf0ba0be9).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Development
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
