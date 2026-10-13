@@ -20,9 +20,9 @@ const tabs: { id: Tab; label: string }[] = [
 
 const projects = [
   { title: "Sports Data Analytics", tag: "Dashboards · Budget", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
-  { title: "Badminton Performance ML", tag: "Python · Regression", note: "Modeled player fatigue from match data with regression to predict performance drops.", to: "/projects", img: imgBadminton },
-  { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Ran a controlled experiment on how music affects memory, tested with ANOVA.", to: "/projects", img: imgMemory },
-  { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Built eigenfaces from scratch and classified faces with K-Nearest Neighbors.", to: "/projects", img: imgFaces },
+  { title: "Badminton Performance ML", tag: "Python · Regression", note: "Modeled player fatigue from match data with regression to predict performance drops.", to: "/projects/badminton-ml", img: imgBadminton },
+  { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Ran a controlled experiment on how music affects memory, tested with ANOVA.", to: "/projects/memory-game", img: imgMemory },
+  { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Built eigenfaces from scratch and classified faces with K-Nearest Neighbors.", to: "/projects/face-pca", img: imgFaces },
   { title: "Youth Volunteers Initiative", tag: "Leadership · Ops", note: "Founded and ran a social initiative connecting youth volunteers with the community.", to: "/leadership", img: imgYouth },
   { title: "Crocodile Bill", tag: "Band Manager", note: "Manage and play guitar in a blues-rock band: booking shows and producing live events.", to: "/leadership", img: imgBand },
 ];
