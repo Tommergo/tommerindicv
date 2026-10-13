@@ -3,7 +3,7 @@ import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
 
 const ContactPage = () => (
-  <div className="min-h-screen bg-background">
+  <div className="adv-theme min-h-screen">
     <Navbar />
     <div className="pt-16">
       <ContactSection />

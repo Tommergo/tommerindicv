@@ -18,22 +18,22 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 adv-leather-panel">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-display font-bold text-lg text-foreground">
-          TG<span className="text-primary">.</span>
+        <Link to="/" className="font-adv-display font-bold text-lg tracking-widest text-[hsl(var(--adv-gold-light))]">
+          TG<span className="text-[hsl(var(--adv-parchment))]">.</span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <Link
               key={l.href}
               to={l.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`font-adv-display text-xs font-bold tracking-wider uppercase transition-colors ${
                 location.pathname === l.href
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-primary"
+                  ? "text-[hsl(var(--adv-gold-light))]"
+                  : "text-[hsl(var(--adv-parchment)/0.75)] hover:text-[hsl(var(--adv-gold-light))]"
               }`}
             >
               {l.label}
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-[hsl(var(--adv-parchment))]" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border"
+            className="md:hidden bg-[hsl(var(--adv-leather-dark))] border-b border-[hsl(var(--adv-gold)/0.4)]"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               {links.map((l) => (
@@ -61,10 +61,10 @@ const Navbar = () => {
                   key={l.href}
                   to={l.href}
                   onClick={() => setOpen(false)}
-                  className={`text-sm font-medium transition-colors py-2 ${
+                  className={`font-adv-display text-xs font-bold tracking-wider uppercase transition-colors py-2 ${
                     location.pathname === l.href
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
+                      ? "text-[hsl(var(--adv-gold-light))]"
+                      : "text-[hsl(var(--adv-parchment)/0.75)] hover:text-[hsl(var(--adv-gold-light))]"
                   }`}
                 >
                   {l.label}

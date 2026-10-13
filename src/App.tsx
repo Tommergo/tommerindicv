@@ -12,6 +12,9 @@ import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import GamePage from "./pages/GamePage";
 import ResumePage from "./pages/ResumePage";
+import BadmintonPage from "./pages/projects/BadmintonPage";
+import MemoryGamePage from "./pages/projects/MemoryGamePage";
+import FacePcaPage from "./pages/projects/FacePcaPage";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/sports-analytics" element={<SportsAnalyticsPage />} />
+          <Route path="/projects/badminton-ml" element={<BadmintonPage />} />
+          <Route path="/projects/memory-game" element={<MemoryGamePage />} />
+          <Route path="/projects/face-pca" element={<FacePcaPage />} />
           <Route path="/leadership" element={<LeadershipPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resume" element={<ResumePage />} />

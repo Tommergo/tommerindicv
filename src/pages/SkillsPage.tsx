@@ -4,7 +4,7 @@ import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import Footer from "@/components/portfolio/Footer";
 
 const SkillsPage = () => (
-  <div className="min-h-screen bg-background">
+  <div className="adv-theme min-h-screen">
     <Navbar />
     <div className="pt-16">
       <SkillsSection />
