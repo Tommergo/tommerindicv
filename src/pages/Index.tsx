@@ -1,22 +1,38 @@
-import { useRef, useState } from "react";
-import { Volume2, VolumeX, Maximize, HelpCircle, Play, X, Compass } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Volume2, VolumeX, Maximize, Minimize, HelpCircle, Play, X, Compass } from "lucide-react";
 import Navbar from "@/components/portfolio/Navbar";
 
 const GAME_URL = "/games/temple-of-the-serpent.html";
+// The game keeps its own mute setting here (same origin as the site).
+const MUTE_KEY = "indy_serpent_muted";
+const readMuted = () => {
+  try { return localStorage.getItem(MUTE_KEY) === "1"; } catch { return false; }
+};
 
 const PlayTab = () => {
   const [started, setStarted] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(readMuted);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [help, setHelp] = useState(false);
   const frameRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
+  // The game plays sound through Web Audio, so muting <audio> tags does nothing.
+  // Its own mute toggle is bound to the O key: send that key to the game.
   const toggleMute = () => {
-    const next = !muted;
-    setMuted(next);
-    try {
-      iframeRef.current?.contentDocument?.querySelectorAll("audio,video").forEach((m) => ((m as HTMLMediaElement).muted = next));
-    } catch { /* ignore */ }
+    const win = iframeRef.current?.contentWindow;
+    if (win) {
+      try {
+        win.dispatchEvent(new KeyboardEvent("keydown", { code: "KeyO", key: "o", bubbles: true }));
+        win.dispatchEvent(new KeyboardEvent("keyup", { code: "KeyO", key: "o", bubbles: true }));
+      } catch { /* ignore */ }
+      setMuted(readMuted());
+    } else {
+      // Game not started yet: store the choice so it starts muted or unmuted.
+      const next = !muted;
+      try { localStorage.setItem(MUTE_KEY, next ? "1" : "0"); } catch { /* ignore */ }
+      setMuted(next);
+    }
     focusGame();
   };
   // The game listens for keys on its own window, so the iframe must hold keyboard focus.
@@ -38,9 +54,24 @@ const PlayTab = () => {
     } catch { /* ignore */ }
   };
   const fullscreen = async () => {
-    try { await frameRef.current?.requestFullscreen?.(); } catch { /* ignore */ }
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await frameRef.current?.requestFullscreen?.();
+    } catch { /* ignore */ }
     focusGame();
   };
+
+  useEffect(() => {
+    const onFs = () => setIsFullscreen(document.fullscreenElement === frameRef.current);
+    // Pressing O inside the game changes its mute setting; the game window writes it to storage.
+    const onStorage = (e: StorageEvent) => { if (e.key === MUTE_KEY) setMuted(e.newValue === "1"); };
+    document.addEventListener("fullscreenchange", onFs);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      document.removeEventListener("fullscreenchange", onFs);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
 
   return (
     <section className="max-w-6xl mx-auto">
@@ -52,8 +83,11 @@ const PlayTab = () => {
         <p className="font-adv-type adv-text-soft mt-3 text-sm md:text-base">An original adventure, designed and built from scratch</p>
       </div>
 
-      <div ref={frameRef} className="adv-frame relative">
-        <div className="relative aspect-video bg-[hsl(var(--adv-leather-dark))] rounded overflow-hidden border border-[hsl(var(--adv-gold)/0.4)]">
+      <div ref={frameRef} className={`adv-frame relative ${isFullscreen ? "!rounded-none flex flex-col items-center justify-center h-screen w-screen bg-[hsl(var(--adv-leather-dark))]" : ""}`}>
+        <div
+          className="relative aspect-video bg-[hsl(var(--adv-leather-dark))] rounded overflow-hidden border border-[hsl(var(--adv-gold)/0.4)]"
+          style={isFullscreen ? { width: "min(100%, calc((100vh - 6rem) * 16 / 9))" } : undefined}
+        >
           {started ? (
             <iframe ref={iframeRef} src={GAME_URL} title="Indy and the Temple of the Serpent" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen onLoad={onGameLoad} />
           ) : (
@@ -63,6 +97,15 @@ const PlayTab = () => {
               <span className="font-adv-type text-sm text-[hsl(var(--adv-parchment)/0.8)]">Click to enter the temple</span>
             </button>
           )}
+          {isFullscreen && (
+            <button
+              onClick={fullscreen}
+              aria-label="Exit fullscreen"
+              className="absolute top-3 right-3 z-20 adv-btn !py-1.5 !px-3 !text-[11px] opacity-80 hover:opacity-100"
+            >
+              <Minimize size={14} /> Exit
+            </button>
+          )}
           {help && (
             <div className="absolute inset-0 bg-[hsl(var(--adv-leather-dark)/0.92)] flex items-center justify-center p-4">
               <div className="adv-paper p-6 max-w-md">
@@ -70,15 +113,15 @@ const PlayTab = () => {
                   <h3 className="font-adv-display font-bold text-lg">Field Guide</h3>
                   <button onClick={() => { setHelp(false); focusGame(); }} aria-label="Close help"><X size={20} /></button>
                 </div>
-                <p className="font-adv-type text-sm leading-relaxed">Click inside the game to focus it. Use the keyboard (arrows / WASD) or touch controls. Explore, dodge traps, and find the relic. Press fullscreen for the full adventure.</p>
+                <p className="font-adv-type text-sm leading-relaxed">Use the keyboard (arrows / WASD) or touch controls. Explore, dodge traps, and find the relic. Press O or the Sound button to mute. Press Fullscreen for the full adventure, and Esc or Exit to leave it.</p>
               </div>
             </div>
           )}
         </div>
 
         <div className="flex flex-wrap justify-center gap-3 mt-5">
-          <button className="adv-btn adv-btn-ghost !py-2 !px-4 !text-xs" onClick={toggleMute} aria-label="Mute">{muted ? <VolumeX size={15} /> : <Volume2 size={15} />} {muted ? "Muted" : "Sound"}</button>
-          <button className="adv-btn adv-btn-ghost !py-2 !px-4 !text-xs" onClick={fullscreen} aria-label="Fullscreen"><Maximize size={15} /> Fullscreen</button>
+          <button className="adv-btn adv-btn-ghost !py-2 !px-4 !text-xs" onClick={toggleMute} aria-label={muted ? "Unmute" : "Mute"} aria-pressed={muted}>{muted ? <VolumeX size={15} /> : <Volume2 size={15} />} {muted ? "Muted" : "Sound"}</button>
+          <button className="adv-btn adv-btn-ghost !py-2 !px-4 !text-xs" onClick={fullscreen} aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}>{isFullscreen ? <Minimize size={15} /> : <Maximize size={15} />} {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}</button>
           <button className="adv-btn adv-btn-ghost !py-2 !px-4 !text-xs" onClick={() => setHelp(true)} aria-label="Help"><HelpCircle size={15} /> Help</button>
         </div>
       </div>
