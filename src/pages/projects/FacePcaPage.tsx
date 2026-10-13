@@ -7,16 +7,16 @@ const FacePcaPage = () => (
     project={{
       title: "Face Data Analysis (PCA)",
       stamp: "Expedition File №5",
-      tag: "Machine Learning · Eigenfaces · KNN",
+      tag: "Machine Learning · PCA · Nearest Neighbor",
       image: img,
-      goal: "Understand face recognition from first principles: instead of using a library, build eigenfaces from scratch and classify faces with K-Nearest Neighbors.",
+      goal: "Understand face recognition from first principles: implement PCA from scratch, then check it against MATLAB's built-in PCA on the same face recognition task.",
       story: [
-        "I processed a dataset of face images, aligned and normalized them, and computed the mean face, the ghostly average that anchors everything.",
-        "I implemented Principal Component Analysis manually to extract eigenfaces, the core patterns that capture how faces differ from one another.",
-        "I projected faces into this lower-dimensional space and classified them with KNN, then evaluated accuracy as the number of components changed.",
+        "I worked with 15 people, 11 grayscale 32 by 32 images each, split into 8 training and 3 test images per person.",
+        "I computed the mean face, centred every image on it, built the covariance matrix and took its eigenvectors, sorted by eigenvalue, as the eigenfaces.",
+        "I projected the images onto the top K eigenfaces and classified them with Nearest Neighbor, comparing accuracy as K changed.",
       ],
-      skills: ["PCA from Scratch", "KNN Classification", "NumPy", "Linear Algebra", "Image Processing", "Model Evaluation"],
-      outcome: "A from-scratch face classification pipeline that demystifies how dimensionality reduction works, and proves I can build ML foundations, not just call APIs.",
+      skills: ["PCA from Scratch", "Nearest Neighbor Classification", "MATLAB", "Linear Algebra", "Eigenfaces", "Model Evaluation"],
+      outcome: "My manual PCA matched MATLAB's built-in PCA exactly, both at 77.59% accuracy, which validated the implementation. It compressed 1024-dimensional images into a compact representation that still separates one person from another.",
     }}
     evidence={<PCAContent />}
   />

@@ -5,18 +5,18 @@ import img from "@/assets/projects/badminton-ml.jpg";
 const BadmintonPage = () => (
   <JournalProjectPage
     project={{
-      title: "Badminton Performance ML",
+      title: "Badminton Performance Analytics",
       stamp: "Expedition File №3",
-      tag: "Python · Regression · Sports Science",
+      tag: "Python · Logistic Regression · BWF Data",
       image: img,
-      goal: "Discover how fatigue accumulates across a badminton match and whether performance drops can be predicted from rally data, turning raw match logs into actionable training insight.",
+      goal: "Help Bnei Herzliya's badminton program with two problems: improve its competitive success rate, and cut training costs, where shuttlecock consumption ran 66% over budget. I used BWF World Tour data to find which in-match moments actually decide who wins.",
       story: [
-        "I collected and cleaned match data rally by rally, handling missing values and inconsistent formats until the dataset was trustworthy.",
-        "I engineered features around rally length, rest time and match progression, then fitted regression models to isolate the fatigue signal from the noise.",
-        "Scatter analysis with a regression line against the y=x baseline revealed exactly where players start underperforming as matches drag on.",
+        "I took historical BWF World Tour data from Kaggle (points, tournament participation and win-loss records) and prepared it in Python.",
+        "I fitted logistic regressions on five match situations: consecutive scoring runs, game-point performance, reaching 11 points first in the deciding game, the point gap after the first 10 points, and Game 1 against Game 3 performance as a fatigue proxy.",
+        "Runs of 4 to 6 consecutive points sharply raised win probability, as did game-point performance, reaching 11 first and an early lead. The fatigue proxy showed almost no relationship (R = 0.05), so each game stands on its own.",
       ],
-      skills: ["Python", "Pandas", "Regression Modeling", "Feature Engineering", "Data Cleaning", "Matplotlib"],
-      outcome: "A working predictive model that flags fatigue-driven performance drops, giving coaches a concrete signal for when to intervene in training and match strategy.",
+      skills: ["Python", "Logistic Regression", "Predictive Analytics", "BWF Data", "Organizational Behavior"],
+      outcome: "A findings table that turns each result into one action for coaches and one for players: manage momentum with timeouts, train for pressure points, start every game strong and reset mentally between games. I also flagged the limits: elite BWF data may not match grassroots players in Herzliya, and new training plans need coach education.",
     }}
     evidence={<BadmintonContent />}
   />

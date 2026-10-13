@@ -14,13 +14,13 @@ export interface FieldNote { title: string; tag: string; note: string; to: strin
 export const dataProjects: FieldNote[] = [
   { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgSports },
   { title: "Sports Data Analytics", tag: "Tableau · Budget vs Results", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
-  { title: "Badminton Performance ML", tag: "Python · Regression", note: "Modeled player fatigue from match data with regression to predict performance drops.", to: "/projects/badminton-ml", img: imgBadminton },
-  { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Ran a controlled experiment on how music affects memory, tested with ANOVA.", to: "/projects/memory-game", img: imgMemory },
-  { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Built eigenfaces from scratch and classified faces with K-Nearest Neighbors.", to: "/projects/face-pca", img: imgFaces },
+  { title: "Badminton Performance Analytics", tag: "Python · Logistic Regression", note: "Used BWF World Tour data to find the in-match moments that decide who wins, and turned them into actions for coaches and players.", to: "/projects/badminton-ml", img: imgBadminton },
+  { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Built a memory game and ran a 30-person within-subjects experiment on music and attention, tested with repeated measures ANOVA.", to: "/projects/memory-game", img: imgMemory },
+  { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Implemented PCA from scratch, matched MATLAB's built-in PCA exactly (77.59% accuracy) and classified faces with Nearest Neighbor.", to: "/projects/face-pca", img: imgFaces },
 ];
 
 export const leadershipProjects: FieldNote[] = [
-  { title: "Youth Volunteers Initiative", tag: "Leadership · Ops", note: "Founded and ran a social initiative connecting youth volunteers with the community.", to: "/leadership#youth", img: imgYouth },
+  { title: "Youth Volunteers Initiative", tag: "Leadership · Ops", note: "Built a training program that prepares National Service volunteers to mentor at-risk youth. The Jerusalem Municipality adopted it.", to: "/leadership#youth", img: imgYouth },
   { title: "Crocodile Bill", tag: "Band Manager", note: "Manage an independent band: logistics, budget, partners and promotion. Ran A/B tests on social post formats.", to: "/leadership#band", img: imgBand },
 ];
 
