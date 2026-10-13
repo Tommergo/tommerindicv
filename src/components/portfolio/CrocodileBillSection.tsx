@@ -1,4 +1,4 @@
-import { Music, Speaker, Handshake, Truck, Users, TrendingUp, CalendarDays } from "lucide-react";
+import { Music, Speaker, Handshake, Truck, Users, TrendingUp, CalendarDays, BadgeCheck } from "lucide-react";
 import bandBw from "@/assets/band-bw.png";
 import bandLive from "@/assets/band-live.png";
 import bandEvent from "@/assets/band-event.jpeg";
@@ -33,13 +33,18 @@ const CrocodileBillSection = () => (
         <h2 className="font-adv-display font-extrabold text-2xl md:text-3xl mt-3">Crocodile Bill Inc.</h2>
         <p className="font-adv-type adv-text-soft text-sm mt-1 uppercase tracking-widest">Live music &amp; sound services</p>
       </div>
-      <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
-        <CalendarDays size={16} className="adv-text-gold" /> About 3 events a month
+      <div className="flex flex-wrap gap-2">
+        <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
+          <BadgeCheck size={16} className="adv-text-gold" /> Registered business in Israel
+        </div>
+        <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
+          <CalendarDays size={16} className="adv-text-gold" /> About 3 events a month
+        </div>
       </div>
     </div>
 
     <p className="text-base md:text-lg leading-relaxed adv-text-soft mb-8">
-      A business I run alongside my degree. Every event is a small project with a client, a budget, suppliers, a crew
+      A business I founded and run alongside my degree, officially registered in Israel. Every event is a small project with a client, a budget, suppliers, a crew
       and a hard deadline: the moment the show starts.
     </p>
 
