@@ -47,7 +47,7 @@ const tools = [
 ];
 
 const SportsAnalyticsPage = () => (
-  <div className="min-h-screen bg-background">
+  <div className="adv-theme min-h-screen">
     <Navbar />
     <div className="pt-20 pb-16">
       <div className="container mx-auto px-4 max-w-6xl">

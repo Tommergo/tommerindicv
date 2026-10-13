@@ -5,7 +5,7 @@ import { Maximize2 } from "lucide-react";
 const GAME_URL = "/games/temple-of-the-serpent.html";
 
 const GamePage = () => (
-  <div className="min-h-screen bg-background">
+  <div className="adv-theme min-h-screen">
     <Navbar />
     <main className="pt-24 pb-16 container mx-auto px-4">
       <div className="max-w-5xl mx-auto text-center mb-6">

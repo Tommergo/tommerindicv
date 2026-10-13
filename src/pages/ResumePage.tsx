@@ -8,7 +8,7 @@ import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
 
 const ResumePage = () => (
-  <div className="min-h-screen bg-background">
+  <div className="adv-theme min-h-screen">
     <Navbar />
     <main>
       <HeroSection />
