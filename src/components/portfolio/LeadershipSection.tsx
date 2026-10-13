@@ -3,7 +3,7 @@ import engineeringCouncilLogo from "@/assets/engineering-council-logo.jpeg";
 import engineeringFacultyLogo from "@/assets/engineering-faculty-logo.png";
 import studentUnionLogo from "@/assets/student-union-logo.png";
 
-const items = [
+export const leadershipItems = [
   {
     logo: engineeringFacultyLogo,
     title: "Faculty Engineering Committee",
@@ -34,7 +34,7 @@ const LeadershipSection = () => (
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {items.map((item, i) => (
+        {leadershipItems.map((item, i) => (
           <motion.div
             key={item.title}
             initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Database, LayoutDashboard, Gauge, FlaskConical, Presentation, Code2, Languages } from "lucide-react";
+import { Target, Database, LayoutDashboard, Gauge, FlaskConical, Presentation, Code2 } from "lucide-react";
 
 const fits = [
   {
@@ -83,25 +83,11 @@ const RoleFitSection = () => (
               <f.icon size={22} style={{ color: f.color }} />
             </div>
             <h3 className="font-display font-semibold text-base mb-3 leading-snug">{f.req}</h3>
-            <p className="text-body text-sm leading-relaxed">{f.proof}</p>
+            <p className="text-body text-base leading-relaxed">{f.proof}</p>
           </motion.div>
         ))}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="max-w-6xl mx-auto mt-6 rounded-3xl border border-border bg-card/60 p-6 flex flex-wrap items-center gap-4 justify-between"
-      >
-        <div className="flex items-center gap-3">
-          <Languages className="text-primary" size={20} />
-          <p className="text-body text-sm">
-            Native-level English (verbal &amp; written) · Native Hebrew · Fourth-year B.Sc.
-          </p>
-        </div>
-        <span className="text-xs font-bold uppercase tracking-widest text-accent">Tel Aviv · Full time</span>
-      </motion.div>
     </div>
   </section>
 );

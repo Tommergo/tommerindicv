@@ -31,7 +31,7 @@ const Navbar = () => {
             <Link
               key={l.href}
               to={l.href}
-              className={`adv-btn !text-[11px] !py-2 !px-3.5 ${isActive(location.pathname, l.href) ? "" : "adv-btn-leather"}`}
+              className={`adv-btn !text-xs !py-2 !px-3.5 ${isActive(location.pathname, l.href) ? "" : "adv-btn-leather"}`}
             >
               {l.label}
             </Link>

@@ -70,13 +70,13 @@ const ExperienceSection = () => (
               </div>
             )}
             <h3 className="font-display font-semibold text-lg mb-2">{exp.title}</h3>
-            <p className="text-body text-sm mb-4">{exp.desc}</p>
+            <p className="text-body text-base mb-4">{exp.desc}</p>
 
             <div className="space-y-2 mb-5">
               {exp.responsibilities.map((r) => (
                 <div key={r} className="flex items-start gap-2">
                   <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={14} />
-                  <span className="text-body text-sm">{r}</span>
+                  <span className="text-body text-base">{r}</span>
                 </div>
               ))}
             </div>

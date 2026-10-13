@@ -53,13 +53,13 @@ const JournalProjectPage = ({ project, evidence, backTo = { href: "/projects", l
 
         <div className="grid gap-6">
           <Section icon={<Target size={20} />} title="The Mission">
-            <p className="text-base leading-relaxed adv-text-soft">{project.goal}</p>
+            <p className="text-base md:text-lg leading-relaxed adv-text-soft">{project.goal}</p>
           </Section>
 
           <Section icon={<BookOpen size={20} />} title="The Journey">
             <div className="space-y-4">
               {project.story.map((p, i) => (
-                <p key={i} className="text-base leading-relaxed adv-text-soft">{p}</p>
+                <p key={i} className="text-base md:text-lg leading-relaxed adv-text-soft">{p}</p>
               ))}
             </div>
           </Section>
@@ -67,7 +67,7 @@ const JournalProjectPage = ({ project, evidence, backTo = { href: "/projects", l
           <Section icon={<Wrench size={20} />} title="Tools & Skills">
             <div className="flex flex-wrap gap-2.5">
               {project.skills.map((s) => (
-                <span key={s} className="font-adv-type text-xs tracking-wider px-3 py-1.5 rounded border border-[hsl(var(--adv-leather)/0.4)] bg-[hsl(var(--adv-parchment-dark))]">
+                <span key={s} className="font-adv-type text-sm tracking-wider px-3 py-1.5 rounded border border-[hsl(var(--adv-leather)/0.4)] bg-[hsl(var(--adv-parchment-dark))]">
                   {s}
                 </span>
               ))}
@@ -75,7 +75,7 @@ const JournalProjectPage = ({ project, evidence, backTo = { href: "/projects", l
           </Section>
 
           <Section icon={<Award size={20} />} title="The Relic Found">
-            <p className="text-base leading-relaxed adv-text-soft">{project.outcome}</p>
+            <p className="text-base md:text-lg leading-relaxed adv-text-soft">{project.outcome}</p>
           </Section>
         </div>
 

@@ -25,27 +25,18 @@ const photos = [
 ];
 
 const CrocodileBillSection = () => (
-  <section className="adv-paper relative p-6 md:p-10">
-    <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" aria-hidden="true" />
-    <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-      <div>
-        <span className="adv-stamp">Founder &amp; Manager</span>
-        <h2 className="font-adv-display font-extrabold text-2xl md:text-3xl mt-3">Crocodile Bill Inc.</h2>
-        <p className="font-adv-type adv-text-soft text-sm mt-1 uppercase tracking-widest">Live music &amp; sound services</p>
+  <div>
+    <div className="flex flex-wrap gap-2 mb-6">
+      <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
+        <BadgeCheck size={16} className="adv-text-gold" /> Registered business in Israel
       </div>
-      <div className="flex flex-wrap gap-2">
-        <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
-          <BadgeCheck size={16} className="adv-text-gold" /> Registered business in Israel
-        </div>
-        <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
-          <CalendarDays size={16} className="adv-text-gold" /> About 3 events a month
-        </div>
+      <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
+        <CalendarDays size={16} className="adv-text-gold" /> About 3 events a month
       </div>
     </div>
 
     <p className="text-base md:text-lg leading-relaxed adv-text-soft mb-8">
-      A business I founded and run alongside my degree, officially registered in Israel. Every event is a small project with a client, a budget, suppliers, a crew
-      and a hard deadline: the moment the show starts.
+      Every event is a small project with a client, a budget, suppliers, a crew and a hard deadline: the moment the show starts.
     </p>
 
     <figure className="adv-paper p-3 pb-4 mb-8 relative" style={{ transform: "rotate(-0.6deg)" }}>
@@ -56,7 +47,7 @@ const CrocodileBillSection = () => (
       {services.map((s) => (
         <div key={s.title} className="rounded border border-[hsl(var(--adv-leather)/0.3)] bg-[hsl(var(--adv-parchment)/0.6)] p-5">
           <h3 className="font-adv-display font-bold flex items-center gap-2 mb-2"><s.icon size={18} className="adv-text-gold" /> {s.title}</h3>
-          <p className="text-sm adv-text-soft leading-relaxed">{s.desc}</p>
+          <p className="text-base adv-text-soft leading-relaxed">{s.desc}</p>
         </div>
       ))}
     </div>
@@ -69,8 +60,8 @@ const CrocodileBillSection = () => (
             <s.icon size={17} />
           </div>
           <div>
-            <p className="font-adv-display font-bold text-sm">{s.title}</p>
-            <p className="text-sm adv-text-soft leading-relaxed">{s.desc}</p>
+            <p className="font-adv-display font-bold text-base">{s.title}</p>
+            <p className="text-base adv-text-soft leading-relaxed">{s.desc}</p>
           </div>
         </div>
       ))}
@@ -81,7 +72,7 @@ const CrocodileBillSection = () => (
         <img key={p.alt} src={p.src} alt={p.alt} className="w-full rounded-sm object-cover aspect-square border border-[hsl(var(--adv-leather)/0.35)]" loading="lazy" />
       ))}
     </div>
-  </section>
+  </div>
 );
 
 export default CrocodileBillSection;

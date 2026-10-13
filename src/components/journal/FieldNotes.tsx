@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FileText, Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, Languages } from "lucide-react";
 import imgSports from "@/assets/projects/sports-analytics.jpg";
 import imgMeir from "@/assets/projects/meir-medical.jpg";
 import imgBadminton from "@/assets/projects/badminton-ml.jpg";
@@ -12,27 +12,39 @@ export interface FieldNote { title: string; tag: string; note: string; to: strin
 
 export const dataProjects: FieldNote[] = [
   { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgMeir },
-  { title: "Sports Data Analytics", tag: "Tableau · Budget vs Results", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
+  { title: "Sports Data Analytics", tag: "Tableau · Python · Logistic Regression", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
   { title: "Badminton Performance Analytics", tag: "Python · Logistic Regression", note: "Used BWF World Tour data to find the in-match moments that decide who wins, and turned them into actions for coaches and players.", to: "/projects/badminton-ml", img: imgBadminton },
-  { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Built a memory game and ran a 30-person within-subjects experiment on music and attention, tested with repeated measures ANOVA.", to: "/projects/memory-game", img: imgMemory },
-  { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Implemented PCA from scratch, matched MATLAB's built-in PCA exactly (77.59% accuracy) and classified faces with Nearest Neighbor.", to: "/projects/face-pca", img: imgFaces },
+  { title: "Memory Game: Music & Attention", tag: "Experimental Design · ANOVA · Web Development", note: "Built a memory game and ran a 30-person within-subjects experiment on music and attention, tested with repeated measures ANOVA.", to: "/projects/memory-game", img: imgMemory },
+  { title: "Face Data Analysis (PCA)", tag: "PCA · MATLAB · Nearest Neighbor", note: "Implemented PCA from scratch, matched MATLAB's built-in PCA exactly (77.59% accuracy) and classified faces with Nearest Neighbor.", to: "/projects/face-pca", img: imgFaces },
 ];
 
 
 const TILTS = [-1.5, 1, -1, 1.5, -1, 1, -1.5];
 
 export const PolaroidGrid = ({ items }: { items: FieldNote[] }) => (
-  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div className="flex flex-wrap justify-center gap-8">
     {items.map((p, i) => (
-      <Link key={p.title} to={p.to} className="adv-paper relative block p-4 pb-5 hover:-translate-y-1.5 transition-transform duration-200" style={{ transform: `rotate(${TILTS[i % TILTS.length]}deg)` }}>
+      <Link
+        key={p.title}
+        to={p.to}
+        className="adv-paper relative flex flex-col p-4 pb-5 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] hover:-translate-y-1.5 transition-transform duration-200"
+        style={{ transform: `rotate(${TILTS[i % TILTS.length]}deg)` }}
+      >
         <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" />
         <div className="aspect-[4/3] overflow-hidden rounded-sm border border-[hsl(var(--adv-leather)/0.35)] mb-4">
           <img src={p.img} alt={p.title} loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
         </div>
-        <p className="font-adv-type text-[11px] tracking-widest text-[hsl(var(--adv-red))] mb-1.5 uppercase">{p.tag}</p>
-        <h3 className="font-adv-display font-bold text-lg leading-snug mb-2">{p.title}</h3>
-        <p className="text-sm adv-text-soft leading-relaxed">{p.note}</p>
-        <span className="inline-flex items-center gap-1.5 font-adv-display font-bold text-xs tracking-wider adv-text-gold mt-3 uppercase">Open File <ArrowRight size={13} /></span>
+        <h3 className="font-adv-display font-bold text-xl leading-snug mb-2">{p.title}</h3>
+        <p className="text-base adv-text-soft leading-relaxed mb-4">{p.note}</p>
+        <div className="mt-auto">
+          <p className="font-adv-display font-bold text-xs tracking-widest uppercase text-[hsl(var(--adv-red))] mb-2">Skills</p>
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {p.tag.split("·").map((t) => (
+              <span key={t} className="font-adv-type text-xs px-2 py-1 rounded border border-[hsl(var(--adv-leather)/0.4)] bg-[hsl(var(--adv-parchment-dark))]">{t.trim()}</span>
+            ))}
+          </div>
+          <span className="inline-flex items-center gap-1.5 font-adv-display font-bold text-sm tracking-wider adv-text-gold uppercase">Open File <ArrowRight size={14} /></span>
+        </div>
       </Link>
     ))}
   </div>
@@ -68,7 +80,6 @@ export const ExplorerCard = () => (
       </p>
     </div>
     <div className="flex flex-wrap justify-center gap-4 mt-10">
-      <Link to="/experience" className="adv-btn adv-btn-leather"><FileText size={17} /> See My Experience</Link>
       <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn"><Download size={17} /> Download PDF</a>
     </div>
     <div className="grid grid-cols-3 gap-3 md:gap-5 mt-10">
@@ -79,7 +90,10 @@ export const ExplorerCard = () => (
         </div>
       ))}
     </div>
-    <p className="text-center font-adv-type text-sm adv-text-soft mt-6">Available for a full-time, long-term Data Analyst role in Tel Aviv.</p>
+    <p className="text-center font-adv-type text-sm md:text-base adv-text-soft mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+      <Languages size={16} className="adv-text-gold" /> Native-level English · Native Hebrew
+      <span aria-hidden="true">·</span> Available for a full-time, long-term Data Analyst role in Tel Aviv
+    </p>
   </section>
 );
 

@@ -1,6 +1,5 @@
 import Navbar from "@/components/portfolio/Navbar";
 import RoleFitSection from "@/components/portfolio/RoleFitSection";
-import GrowthFunnelSection from "@/components/portfolio/GrowthFunnelSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
 import { ExplorerCard } from "@/components/journal/FieldNotes";
@@ -13,7 +12,6 @@ const ResumePage = () => (
         <ExplorerCard />
       </div>
       <RoleFitSection />
-      <GrowthFunnelSection />
       <ContactSection />
     </main>
     <Footer />

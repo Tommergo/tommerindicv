@@ -246,7 +246,7 @@ const SectionHeader = ({ title, subtitle, color }: { title: string; subtitle: st
 const InsightBox = ({ text, color }: { text: string; color?: string }) => (
   <div className="mt-5 rounded-xl p-4 flex gap-3 items-start border" style={{ background: `${color || "hsl(38, 80%, 42%)"}10`, borderColor: `${color || "hsl(38, 80%, 42%)"}30` }}>
     <Lightbulb size={18} style={{ color: color || "hsl(38, 80%, 42%)" }} className="shrink-0 mt-0.5" />
-    <p className="text-sm text-muted-foreground">{text}</p>
+    <p className="text-base text-muted-foreground">{text}</p>
   </div>
 );
 
