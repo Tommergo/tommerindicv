@@ -624,8 +624,8 @@ export const MemoryGameContent = () => {
   return (
     <div className="space-y-6">
       <div className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-lg">
-        <div className="flex items-start justify-between gap-4 mb-6">
-          <div className="flex items-start gap-4">
+        <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+          <div className="flex items-start gap-4 min-w-0">
             <div className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
               <Gamepad2 className="text-primary" size={24} />
             </div>
