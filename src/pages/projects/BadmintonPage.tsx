@@ -8,7 +8,7 @@ const BadmintonPage = () => (
       stamp: "Expedition File №2",
       tag: "Python · Regression · Sports Science",
       image: img,
-      goal: "Discover how fatigue accumulates across a badminton match and whether performance drops can be predicted from rally data — turning raw match logs into actionable training insight.",
+      goal: "Discover how fatigue accumulates across a badminton match and whether performance drops can be predicted from rally data, turning raw match logs into actionable training insight.",
       story: [
         "I collected and cleaned match data rally by rally, handling missing values and inconsistent formats until the dataset was trustworthy.",
         "I engineered features around rally length, rest time and match progression, then fitted regression models to isolate the fatigue signal from the noise.",

@@ -15,6 +15,7 @@ import ResumePage from "./pages/ResumePage";
 import BadmintonPage from "./pages/projects/BadmintonPage";
 import MemoryGamePage from "./pages/projects/MemoryGamePage";
 import FacePcaPage from "./pages/projects/FacePcaPage";
+import MeirMedicalPage from "./pages/projects/MeirMedicalPage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/meir-medical" element={<MeirMedicalPage />} />
           <Route path="/projects/sports-analytics" element={<SportsAnalyticsPage />} />
           <Route path="/projects/badminton-ml" element={<BadmintonPage />} />
           <Route path="/projects/memory-game" element={<MemoryGamePage />} />

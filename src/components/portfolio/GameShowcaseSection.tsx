@@ -20,8 +20,8 @@ const GameShowcaseSection = () => (
             Indy &amp; the <span className="text-gradient-play">Temple of the Serpent</span>
           </h2>
           <p className="text-body text-base md:text-lg leading-relaxed">
-            A browser adventure game I designed and built myself. Loving mobile games isn't just a line on my CV —
-            I understand what makes players tap, stay and come back. Give it a try.
+            A 2D browser game I designed and built from scratch: 11 levels, whip-swing physics, enemy AI, a dialogue
+            engine and a three-phase boss fight. Loving games is not just a line on my CV. Give it a try.
           </p>
         </div>
         <Button variant="hero" size="lg" asChild>

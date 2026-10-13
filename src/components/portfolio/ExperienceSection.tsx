@@ -1,46 +1,49 @@
 import { motion } from "framer-motion";
-import { Briefcase, Music, CheckCircle2, Server } from "lucide-react";
+import { Briefcase, Music, CheckCircle2, Server, GraduationCap, Gamepad2 } from "lucide-react";
 import redisLogo from "@/assets/redis-logo.png";
-import unityLogo from "@/assets/unity-logo.png";
 
 const experiences = [
   {
-    icon: Server,
-    title: "IT Help Desk – Redis",
-    desc: "Worked at Redis as IT Help Desk, managing user account data and infrastructure.",
+    icon: GraduationCap,
+    title: "Teaching Assistant, Interfaces & Information Presentation",
+    desc: "Bar-Ilan University. Tableau is part of the syllabus.",
     responsibilities: [
-      "Managing and maintaining user account data",
-      "Identifying and resolving duplicate accounts",
-      "Handling physical connections and hardware setup",
-      "Account provisioning and access management",
+      "Teach Tableau, dashboard design and KPI definition to 60 engineering students across two classes",
+      "Review and grade student dashboards: what reads at a glance, what misleads, and what a decision-maker actually needs",
     ],
-    skills: ["Data Management", "IT Support", "Problem Solving", "Account Administration"],
+    skills: ["Tableau", "Dashboard Design", "KPIs", "Teaching"],
+  },
+  {
+    icon: Gamepad2,
+    title: "QA Game Tester, Faculty of Education",
+    desc: "Bar-Ilan University. Tested an educational game in development.",
+    responsibilities: [
+      "Reproduced and documented bugs, and verified fixes across release cycles",
+      "Proposed improvements to the game itself and saw those suggestions acted on",
+    ],
+    skills: ["QA Testing", "Analytical Thinking", "Attention to Detail"],
+  },
+  {
+    icon: Server,
+    title: "Help Desk & System Administrator, Redis",
+    desc: "Global high-tech company. Site-wide technical support across departments and R&D.",
+    responsibilities: [
+      "Wrote SQL daily against user data to find duplicates and anomalies",
+      "Used Python to automate repetitive work",
+      "Managed user accounts, permissions and access",
+    ],
+    skills: ["SQL", "Python", "Data Management"],
     logo: redisLogo,
   },
   {
-    icon: Server,
-    title: "QA Tester – Computer Game",
-    logo: unityLogo,
-    desc: "Performed Quality Assurance testing for a computer game project.",
-    responsibilities: [
-      "Identifying bugs and unexpected behavior",
-      "Testing gameplay mechanics and system stability",
-      "Writing structured feedback and bug reports",
-      "Collaborating with developers to improve product quality",
-    ],
-    skills: ["Analytical Thinking", "Attention to Detail", "Systematic Testing"],
-  },
-  {
     icon: Music,
-    title: "Band Manager & Producer – Crocodile Bill",
-    desc: "Organizer and manager of the blues-rock band Crocodile Bill.",
+    title: "Manager & Producer, Crocodile Bill",
+    desc: "Independent band.",
     responsibilities: [
-      "Managing rehearsals and live performances",
-      "Coordinating musicians and logistics",
-      "Organizing concerts and events",
-      "Branding, promotion, and audience engagement",
+      "Ran A/B tests on social media post formats and kept the ones that performed",
+      "Run the band end to end: logistics, budget ownership, partner negotiation and promotion",
     ],
-    skills: ["Leadership", "Event Production", "Team Coordination", "Project Management"],
+    skills: ["A/B Testing", "Project Management", "Negotiation"],
   },
 ];
 

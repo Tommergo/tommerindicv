@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
-import { BarChart3, Cpu, FolderKanban, Rocket } from "lucide-react";
+import { BarChart3, LayoutDashboard, FlaskConical, Presentation } from "lucide-react";
 
 const groups = [
   {
     icon: BarChart3,
-    title: "Data & Analytics",
-    subtitle: "Trends, discrepancies, opportunities — then a recommendation",
-    skills: ["Excel (Pivot, Lookups)", "Python", "Pandas", "Statistical Analysis", "Data Visualization", "Machine Learning", "PCA"],
+    title: "Analysis",
+    subtitle: "From raw data to a finding",
+    skills: ["SQL", "Python", "pandas", "NumPy", "Excel", "Statistical Analysis"],
     color: "hsl(var(--primary))",
   },
   {
-    icon: Rocket,
-    title: "Marketing & Growth",
-    subtitle: "Funnel thinking, campaign metrics, budget allocation",
-    skills: ["Campaign Metrics (CPI, CTR, ROAS)", "A/B Testing", "Budget Tracking", "Reporting", "Presentation"],
+    icon: LayoutDashboard,
+    title: "Dashboards & BI",
+    subtitle: "Dashboards people actually use",
+    skills: ["Tableau", "Dashboard Design", "Data Visualization", "KPI Definition", "KPI Reporting"],
     color: "hsl(var(--magenta))",
   },
   {
-    icon: FolderKanban,
-    title: "Project Management",
-    subtitle: "Multiple projects, tight schedules, clear owners",
-    skills: ["Prioritization", "Stakeholder Management", "Cross-team Collaboration", "Problem Solving", "Event Production"],
+    icon: FlaskConical,
+    title: "Analytics Methods",
+    subtitle: "Measure, compare, recommend",
+    skills: ["A/B Testing", "Correlation Analysis", "ROI Analysis", "Machine Learning", "PCA"],
     color: "hsl(var(--violet))",
   },
   {
-    icon: Cpu,
-    title: "Tools & Platforms",
-    subtitle: "Quick to learn any third-party dashboard",
-    skills: ["MS-Office Suite", "BI Dashboards", "QA Testing", "Data Collection Systems", "Web Development"],
+    icon: Presentation,
+    title: "Communication & Delivery",
+    subtitle: "Analysis that lands",
+    skills: ["Presenting to Leadership", "Teaching Tableau", "Project Management", "Stakeholder Management", "QA Testing"],
     color: "hsl(var(--amber))",
   },
 ];
@@ -42,9 +42,9 @@ const SkillsSection = () => (
         className="text-center mb-14"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-3">
-          Skills built for <span className="text-gradient-play">performance marketing</span>
+          Skills built for <span className="text-gradient-play">product analytics</span>
         </h2>
-        <p className="text-body">Tools, domains, and competencies I bring to a growth team.</p>
+        <p className="text-body">Tools and competencies I bring to a data team.</p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">

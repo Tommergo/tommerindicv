@@ -9,7 +9,7 @@ import imgYouth from "@/assets/projects/youth-volunteers.jpg";
 import imgBand from "@/assets/projects/crocodile-bill.jpg";
 
 const GAME_URL = "/games/temple-of-the-serpent.html";
-const RESUME_PDF = "/resume.pdf";
+const RESUME_PDF = "/Tommer_Goldstein_CV.pdf";
 
 type Tab = "play" | "about" | "projects";
 const tabs: { id: Tab; label: string }[] = [
@@ -19,12 +19,13 @@ const tabs: { id: Tab; label: string }[] = [
 ];
 
 const projects = [
-  { title: "Sports Data Analytics", tag: "Dashboards · Budget", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
+  { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgSports },
+  { title: "Sports Data Analytics", tag: "Tableau · Budget vs Results", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
   { title: "Badminton Performance ML", tag: "Python · Regression", note: "Modeled player fatigue from match data with regression to predict performance drops.", to: "/projects/badminton-ml", img: imgBadminton },
   { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Ran a controlled experiment on how music affects memory, tested with ANOVA.", to: "/projects/memory-game", img: imgMemory },
   { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Built eigenfaces from scratch and classified faces with K-Nearest Neighbors.", to: "/projects/face-pca", img: imgFaces },
   { title: "Youth Volunteers Initiative", tag: "Leadership · Ops", note: "Founded and ran a social initiative connecting youth volunteers with the community.", to: "/leadership", img: imgYouth },
-  { title: "Crocodile Bill", tag: "Band Manager", note: "Manage and play guitar in a blues-rock band: booking shows and producing live events.", to: "/leadership", img: imgBand },
+  { title: "Crocodile Bill", tag: "Band Manager", note: "Manage an independent band: logistics, budget, partners and promotion. Ran A/B tests on social post formats.", to: "/leadership", img: imgBand },
 ];
 
 const PlayTab = () => {
@@ -48,15 +49,15 @@ const PlayTab = () => {
       <div className="text-center mb-8">
         <span className="adv-stamp mb-4">A web game by Tommer Goldstein</span>
         <h1 className="adv-title font-adv-display font-extrabold text-3xl md:text-5xl leading-tight mt-4">
-          INDIANA JONES<br />AND THE CALL OF CTHULHU
+          INDY &amp; THE TEMPLE<br />OF THE SERPENT
         </h1>
-        <p className="font-adv-type adv-text-soft mt-3 text-sm md:text-base">An original adventure — designed &amp; built from scratch</p>
+        <p className="font-adv-type adv-text-soft mt-3 text-sm md:text-base">An original adventure, designed and built from scratch</p>
       </div>
 
       <div ref={frameRef} className="adv-frame relative">
         <div className="relative aspect-video bg-[hsl(var(--adv-leather-dark))] rounded overflow-hidden border border-[hsl(var(--adv-gold)/0.4)]">
           {started ? (
-            <iframe ref={iframeRef} src={GAME_URL} title="Indiana Jones and the Call of Cthulhu" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen />
+            <iframe ref={iframeRef} src={GAME_URL} title="Indy and the Temple of the Serpent" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen />
           ) : (
             <button onClick={() => setStarted(true)} className="absolute inset-0 flex flex-col items-center justify-center gap-6 group">
               <Compass size={44} className="text-[hsl(var(--adv-gold-light))] group-hover:rotate-45 transition-transform duration-500" />
@@ -85,7 +86,7 @@ const PlayTab = () => {
       </div>
 
       <p className="text-center font-adv-type adv-text-soft mt-8 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-        I designed and built this whole game myself, using modern AI tools, to push my creativity and learn fast.
+        I designed and built this whole game myself, using modern AI tools for the soundtrack and the art, to push my creativity and learn fast.
       </p>
     </section>
   );
@@ -100,16 +101,15 @@ const AboutTab = () => (
     <div className="adv-paper p-6 md:p-10 relative">
       <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2" />
       <p className="text-base md:text-lg leading-relaxed">
-        Hi, I'm <strong>Tommer Goldstein</strong>. I'm a 4th-year student in Industrial Engineering and Information Systems at
-        Bar-Ilan University, specializing in data analysis and operations research. I have a huge passion for Indiana Jones,
-        the Call of Cthulhu mythos, and game design. During my free time, I challenged myself to build a complete web game
-        using modern AI tools to showcase my creativity, technical problem-solving, and fast learning capabilities.
-        I'm currently seeking my next big career challenge!
+        Hi, I'm <strong>Tommer Goldstein</strong>, a fourth-year Industrial Engineering and Information Systems student at
+        Bar-Ilan University. I analyse real operational data, build Tableau dashboards, and present findings to the
+        people who decide. I also build games in my own time: I designed and shipped this one from scratch.
+        I'm looking for a Data Analyst role in gaming.
       </p>
     </div>
     <div className="flex flex-wrap justify-center gap-4 mt-10">
       <Link to="/resume" className="adv-btn adv-btn-leather"><FileText size={17} /> View Full Resume</Link>
-      <a href={RESUME_PDF} download="Tommer_Goldstein_Resume.pdf" className="adv-btn"><Download size={17} /> Download PDF</a>
+      <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn"><Download size={17} /> Download PDF</a>
     </div>
     <div className="flex flex-wrap justify-center gap-6 mt-8 font-adv-type text-sm">
       <a href="mailto:tommer1999@gmail.com" className="inline-flex items-center gap-2 adv-text-gold hover:underline"><Mail size={16} /> tommer1999@gmail.com</a>
@@ -127,7 +127,7 @@ const ProjectsTab = () => (
     </div>
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((p, i) => (
-        <Link key={p.title} to={p.to} className="adv-paper relative block p-4 pb-5 hover:-translate-y-1.5 transition-transform duration-200" style={{ transform: `rotate(${[-1.5, 1, -1, 1.5, -1, 1][i]}deg)` }}>
+        <Link key={p.title} to={p.to} className="adv-paper relative block p-4 pb-5 hover:-translate-y-1.5 transition-transform duration-200" style={{ transform: `rotate(${[-1.5, 1, -1, 1.5, -1, 1, -1.5][i]}deg)` }}>
           <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" />
           <div className="aspect-[4/3] overflow-hidden rounded-sm border border-[hsl(var(--adv-leather)/0.35)] mb-4">
             <img src={p.img} alt={p.title} loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />

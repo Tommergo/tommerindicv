@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Megaphone, MousePointerClick, Download, Repeat, Coins } from "lucide-react";
+import { HelpCircle, Database, Search, LayoutDashboard, Presentation } from "lucide-react";
 
 const steps = [
-  { icon: Megaphone, label: "Impression", desc: "Creative & network mix", num: "01" },
-  { icon: MousePointerClick, label: "Click", desc: "CTR, CPC, placement quality", num: "02" },
-  { icon: Download, label: "Install", desc: "CPI, install-to-click rate", num: "03" },
-  { icon: Repeat, label: "Retention", desc: "D1 / D7 cohort behaviour", num: "04" },
-  { icon: Coins, label: "ROAS", desc: "LTV vs. spend, budget reallocation", num: "05" },
+  { icon: HelpCircle, label: "Question", desc: "What decision does this data need to support?", num: "01" },
+  { icon: Database, label: "Data", desc: "Pull it with SQL, clean it in Python", num: "02" },
+  { icon: Search, label: "Analysis", desc: "Find the pattern, the gap, the correlation", num: "03" },
+  { icon: LayoutDashboard, label: "Dashboard", desc: "Build it in Tableau so it reads at a glance", num: "04" },
+  { icon: Presentation, label: "Decision", desc: "Present to leadership, advise on what to do next", num: "05" },
 ];
 
 const GrowthFunnelSection = () => (
@@ -19,10 +19,10 @@ const GrowthFunnelSection = () => (
         className="text-center mb-14 max-w-2xl mx-auto"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-3">
-          How I think about <span className="text-gradient-play">user acquisition</span>
+          How I think about <span className="text-gradient-play">data work</span>
         </h2>
         <p className="text-body">
-          The same analytical loop I use on any dataset, applied to a paid growth funnel.
+          The same loop on every dataset, from a hospital to a game.
         </p>
       </motion.div>
 

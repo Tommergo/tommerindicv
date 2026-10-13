@@ -1,47 +1,46 @@
 import { motion } from "framer-motion";
-import { Target, BarChart3, Table2, Users, Languages, Gamepad2, Layers } from "lucide-react";
+import { Target, Database, LayoutDashboard, Gauge, FlaskConical, Presentation, Code2, Languages } from "lucide-react";
 
 const fits = [
   {
-    icon: BarChart3,
-    req: "Conduct data analysis — trends, opportunities & discrepancies",
-    proof:
-      "Built statistical and ML analyses (logistic regression, PCA, retention & dropout modelling) on real datasets, always ending with a decision, not a chart.",
+    icon: Database,
+    req: "Strong SQL",
+    proof: "Wrote SQL daily at Redis against user data to find duplicates and anomalies.",
     color: "hsl(var(--primary))",
   },
   {
-    icon: Table2,
-    req: "Profound MS-Office knowledge, Excel in particular",
+    icon: LayoutDashboard,
+    req: "Dashboarding experience (Tableau)",
     proof:
-      "Daily Excel work: pivot tables, lookups, budget models and dashboards used to track spend and performance across projects.",
+      "Built the Tableau dashboard for Bnei Herzliya's budget-vs-results analysis and the KPI dashboard for Meir Medical Center's senior management. I also teach Tableau at Bar-Ilan.",
     color: "hsl(var(--amber))",
   },
   {
-    icon: Layers,
-    req: "Multiple fast-paced projects, tight schedules, within budget",
+    icon: Gauge,
+    req: "Experience with KPI frameworks",
     proof:
-      "Ran parallel academic, work and community projects — budget planning, timelines and stakeholders — without dropping deadlines.",
+      "Defined and presented the KPIs at Meir Medical Center that led the hospital to build emergency data-collection protocols.",
     color: "hsl(var(--magenta))",
   },
   {
-    icon: Users,
-    req: "Build relationships with partners & collaborate cross-team",
+    icon: FlaskConical,
+    req: "Experimentation and A/B tests",
     proof:
-      "Led faculty committees, student organizations and a live band's production — negotiating with vendors, venues and public organizations.",
+      "Ran A/B tests on post formats for my band's social channels and kept the formats that performed. Studied experimental design in my degree.",
     color: "hsl(var(--violet))",
   },
   {
-    icon: Target,
-    req: "BSc in Industrial Engineering / Economics / Statistics",
+    icon: Presentation,
+    req: "Presenting insights to non-technical stakeholders",
     proof:
-      "3rd-year Industrial Engineering & Information Systems student at Bar-Ilan University — statistics, optimization and operations research core.",
+      "Presented wartime findings to a hospital's senior management, and a budget-vs-results analysis to a sports club's leadership. 2nd place in a Shark Tank competition judged by entrepreneurs and academics.",
     color: "hsl(var(--primary))",
   },
   {
-    icon: Gamepad2,
-    req: "Passion for marketing and mobile games",
+    icon: Code2,
+    req: "Python and a gaming mindset",
     proof:
-      "QA tester on a Unity game project and a lifelong gamer — I understand the funnel from ad creative to first session and D1 retention.",
+      "Python (pandas, NumPy) for data preparation and analysis. Built a complete 2D browser game in JavaScript, and tested an educational game as a QA tester.",
     color: "hsl(var(--magenta))",
   },
 ];
@@ -60,7 +59,7 @@ const RoleFitSection = () => (
           <Target size={14} /> Role fit
         </div>
         <h2 className="text-3xl md:text-5xl font-bold mb-4">
-          Why I fit <span className="text-gradient-play">Junior UA Manager</span>
+          Why I fit <span className="text-gradient-play">Data Analyst, Gaming</span>
         </h2>
         <p className="text-body">
           Every requirement in the job description, matched to something I have already done.
@@ -98,7 +97,7 @@ const RoleFitSection = () => (
         <div className="flex items-center gap-3">
           <Languages className="text-primary" size={20} />
           <p className="text-body text-sm">
-            Fluent English (verbal &amp; written) · Native Hebrew · Comfortable presenting to stakeholders
+            Native-level English (verbal &amp; written) · Native Hebrew · Fourth-year B.Sc.
           </p>
         </div>
         <span className="text-xs font-bold uppercase tracking-widest text-accent">Tel Aviv · Full time</span>

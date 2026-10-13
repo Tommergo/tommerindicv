@@ -11,7 +11,7 @@ const GamePage = () => (
       <div className="max-w-5xl mx-auto text-center mb-8">
         <span className="adv-stamp">An original web game</span>
         <h1 className="adv-title font-adv-display font-extrabold text-3xl md:text-5xl mt-4 mb-3">
-          Indiana Jones <span className="text-gradient-play">and the Call of Cthulhu</span>
+          Indy &amp; the <span className="text-gradient-play">Temple of the Serpent</span>
         </h1>
         <p className="font-adv-type adv-text-soft text-sm md:text-base">
           A game I designed and built from scratch. Click inside the game to start playing.
@@ -21,7 +21,7 @@ const GamePage = () => (
         <div className="rounded overflow-hidden border border-[hsl(var(--adv-gold)/0.4)] aspect-video bg-[hsl(var(--adv-leather-dark))]">
           <iframe
             src={GAME_URL}
-            title="Indiana Jones and the Call of Cthulhu"
+            title="Indy and the Temple of the Serpent"
             className="w-full h-full"
             allow="fullscreen; autoplay; gamepad"
             allowFullScreen

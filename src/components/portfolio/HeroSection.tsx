@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Gamepad2, TrendingUp } from "lucide-react";
+import { ArrowDown, Mail, BarChart3, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const badges = [
-  "Campaign Analysis",
-  "Excel / Pivot Tables",
-  "Python & SQL Mindset",
-  "A/B & Experiments",
-  "Reporting & Presentation",
-  "Fluent English",
+  "SQL",
+  "Python (pandas, NumPy)",
+  "Tableau",
+  "KPI Definition",
+  "A/B Testing",
+  "Presenting to Stakeholders",
 ];
 
 const stats = [
-  { label: "Data projects delivered", value: "10+" },
-  { label: "Analytics & ML toolkit", value: "Python · Excel" },
-  { label: "Teams & initiatives led", value: "5" },
+  { label: "Students I teach Tableau to", value: "60" },
+  { label: "Final project grade, Meir Medical Center", value: "95" },
+  { label: "Shark Tank competition", value: "2nd place" },
 ];
 
 const HeroSection = () => {
@@ -35,7 +35,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-bold mb-6 uppercase tracking-wide">
-              <Gamepad2 size={14} /> Applying for Junior User Acquisition Manager · Moon Active
+              <BarChart3 size={14} /> Data Analyst · Gaming &amp; Product Analytics
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
@@ -45,12 +45,11 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl md:text-2xl font-display font-medium mb-4 text-foreground/90">
-              Data-driven marketer in the making — Industrial Engineering &amp; Information Systems, Bar-Ilan University.
+              Industrial &amp; Information Systems Engineering, Bar-Ilan University. I turn data into decisions people act on.
             </p>
             <p className="text-body text-base md:text-lg max-w-xl mb-8 leading-relaxed">
-              I turn raw numbers into growth decisions: spotting trends, discrepancies and opportunities,
-              then packaging them into clear reports that teams can act on. Passionate about mobile games
-              and performance marketing.
+              I build dashboards in Tableau and teach it at Bar-Ilan, I have presented KPIs to a hospital's senior
+              management, and I build games in my own time. Looking for a Data Analyst role in gaming.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
@@ -98,8 +97,7 @@ const HeroSection = () => {
             </div>
             <div className="mt-6 rounded-2xl bg-primary/10 border border-primary/30 p-4">
               <p className="text-sm text-foreground/90 leading-relaxed">
-                Available for a full-time junior role in Tel Aviv. Fast learner on third-party platforms,
-                highly organized under tight schedules.
+                Available for a full-time, long-term Data Analyst role in Tel Aviv.
               </p>
             </div>
           </motion.div>

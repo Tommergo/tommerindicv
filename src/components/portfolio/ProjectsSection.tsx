@@ -216,7 +216,7 @@ const sportsTools = [
 // ── Badminton findings table ──
 const badmintonFindings = [
   { graph: "Scoring Run vs Win Prob", learned: "Scoring runs of 4–6 consecutive points sharply increase winning probability. Momentum matters.", forCoaches: "Manage momentum via timeouts to disrupt opponent scoring runs.", forPlayers: "Focus on building momentum." },
-  { graph: "Game 1 vs Game 3 (Fatigue)", learned: "A strong start doesn't predict a strong finish — correlation is extremely weak (R=0.05). Every game matters!", forCoaches: "Emphasize mental resets between games.", forPlayers: "Treat each game as a fresh start." },
+  { graph: "Game 1 vs Game 3 (Fatigue)", learned: "A strong start doesn't predict a strong finish, correlation is extremely weak (R=0.05). Every game matters!", forCoaches: "Emphasize mental resets between games.", forPlayers: "Treat each game as a fresh start." },
   { graph: "Game Point Performance", learned: "Game point performance has a large impact on winning probability.", forCoaches: "Train players to handle high-pressure situations.", forPlayers: "Stay calm under pressure!" },
   { graph: "Reaching 11 First", learned: "Reaching 11 points first in the deciding game is critical.", forCoaches: "Prepare players mentally & physically for the deciding game.", forPlayers: "Start strong rather than saving energy." },
   { graph: "Early-Game Gap", learned: "Point difference after first 10 points impacts winning probability.", forCoaches: "Prioritize early-game strategy with low-risk plays.", forPlayers: "Start with focus and intensity." },
@@ -265,7 +265,7 @@ const SportsAnalyticsContent = () => (
       style={{ background: "linear-gradient(135deg, hsl(222, 47%, 14%), hsl(222, 47%, 20%), hsl(43, 96%, 56% / 0.3))" }}>
       <div className="relative z-10">
         <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-primary/20 text-primary backdrop-blur-sm mb-4">
-          <Trophy size={14} /> 2nd Place — Sharks Innovation Competition
+          <Trophy size={14} /> 2nd Place: Sharks Innovation Competition
         </span>
         <h3 className="text-2xl md:text-4xl font-bold text-foreground leading-tight mb-3">
           Sports Data Analytics – Bnei Herzliya
@@ -325,7 +325,7 @@ const SportsAnalyticsContent = () => (
           <BudgetPieChart />
         </DashCard>
       </div>
-      <DashCard title="Logistic Regression — Pro Probability" icon={<TrendingUp size={18} />} accent="hsl(160, 84%, 39%)" compact>
+      <DashCard title="Logistic Regression: Pro Probability" icon={<TrendingUp size={18} />} accent="hsl(160, 84%, 39%)" compact>
         <p className="text-xs text-muted-foreground mb-4">Predicted probability of becoming professional vs years of training across sport categories</p>
         <LogisticRegressionChart />
         <InsightBox text="Athletes in smaller sports show a steeper improvement curve, suggesting untapped potential if funding is redistributed." color="hsl(43, 96%, 56%)" />
@@ -412,22 +412,22 @@ const BadmintonContent = () => (
         </div>
         <div>
           <h3 className="font-display font-bold text-xl md:text-2xl">Badminton Performance Analysis</h3>
-          <p className="text-sm text-muted-foreground mt-1">Organizational Behavior — BWF World Tour Data Analysis for Bnei Herzliya</p>
+          <p className="text-sm text-muted-foreground mt-1">Organizational Behavior: BWF World Tour Data Analysis for Bnei Herzliya</p>
         </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 mb-6">
         <div className="bg-secondary/50 rounded-xl p-4 border border-border">
           <p className="text-xs font-semibold text-primary mb-1">Challenge 1</p>
-          <p className="text-sm text-muted-foreground">Improving Competitive Success Rate — increase podium finishes and national rankings.</p>
+          <p className="text-sm text-muted-foreground">Improving Competitive Success Rate: increase podium finishes and national rankings.</p>
         </div>
         <div className="bg-secondary/50 rounded-xl p-4 border border-border">
           <p className="text-xs font-semibold text-primary mb-1">Challenge 2</p>
-          <p className="text-sm text-muted-foreground">Resource-Efficiency in Training — shuttlecock consumption exceeds budget by 66%.</p>
+          <p className="text-sm text-muted-foreground">Resource-Efficiency in Training: shuttlecock consumption exceeds budget by 66%.</p>
         </div>
         <div className="bg-secondary/50 rounded-xl p-4 border border-border">
           <p className="text-xs font-semibold text-primary mb-1">Dataset</p>
-          <p className="text-sm text-muted-foreground">BWF World Tour data from Kaggle — historical performance, points, tournament participation, and win-loss ratios.</p>
+          <p className="text-sm text-muted-foreground">BWF World Tour data from Kaggle: historical performance, points, tournament participation, and win-loss ratios.</p>
         </div>
       </div>
 
@@ -509,7 +509,7 @@ const BadmintonContent = () => (
       {/* Fatigue Chart - Interactive */}
       <div className="bg-secondary/50 rounded-xl p-6 border border-border mb-6">
         <h4 className="text-sm font-semibold text-foreground mb-2">Fatigue Proxy: Game 1 vs Game 3 Performance (Team 1)</h4>
-        <p className="text-xs text-muted-foreground mb-4">Relationship between first game and third game performance — correlation is extremely weak (R = 0.05, R² = 0.00), suggesting no fatigue carry-over effect.</p>
+        <p className="text-xs text-muted-foreground mb-4">Relationship between first game and third game performance, correlation is extremely weak (R = 0.05, R² = 0.00), suggesting no fatigue carry-over effect.</p>
         <div className="flex gap-3 mb-2 text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-[hsl(217,91%,60%)] inline-block" /> Regression line</span>
           <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 border-t border-dashed border-[hsl(38,92%,50%)] inline-block" /> y = x</span>
@@ -630,7 +630,7 @@ const MemoryGameContent = () => {
             </div>
             <div>
               <h3 className="font-display font-bold text-xl md:text-2xl">Memory Game Experiment – Music & Attention</h3>
-              <p className="text-sm text-muted-foreground mt-1">Psychology Research — One-Way Repeated Measures ANOVA</p>
+              <p className="text-sm text-muted-foreground mt-1">Psychology Research: One-Way Repeated Measures ANOVA</p>
             </div>
           </div>
           <div className="flex gap-2 shrink-0">
@@ -777,7 +777,7 @@ const MemoryGameContent = () => {
         {/* Order Effect */}
         <div className="bg-secondary/50 rounded-xl p-4 mb-6">
           <h4 className="text-sm font-semibold text-foreground mb-3">Order Effect Check (Learning Bias)</h4>
-          <p className="text-xs text-muted-foreground mb-3">Average completion time per round across all conditions — no significant learning effect observed.</p>
+          <p className="text-xs text-muted-foreground mb-3">Average completion time per round across all conditions, no significant learning effect observed.</p>
           <ResponsiveContainer width="100%" height={200}>
             <ReLineChart data={orderEffectData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" vertical={false} />
@@ -803,7 +803,7 @@ const MemoryGameContent = () => {
             style={{ background: "linear-gradient(135deg, hsl(222, 47%, 14%), hsl(222, 47%, 20%), hsl(271, 81%, 56% / 0.3))" }}>
             <Gamepad2 size={48} className="text-primary mx-auto mb-3" />
             <h3 className="text-2xl font-bold text-foreground mb-2">🎮 Try the Memory Game Yourself!</h3>
-            <p className="text-sm text-muted-foreground mb-5">Experience the experiment firsthand — play under different music conditions</p>
+            <p className="text-sm text-muted-foreground mb-5">Experience the experiment firsthand, play under different music conditions</p>
             <span className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg shadow-lg hover:shadow-xl transition-shadow">
               Play Now <ExternalLink size={20} />
             </span>
@@ -824,7 +824,7 @@ const PCAContent = () => (
         </div>
         <div>
           <h3 className="font-display font-bold text-xl md:text-2xl">Face Data Analysis using PCA</h3>
-          <p className="text-sm text-muted-foreground mt-1">Machine Learning Course — Task 5</p>
+          <p className="text-sm text-muted-foreground mt-1">Machine Learning Course: Task 5</p>
         </div>
       </div>
 

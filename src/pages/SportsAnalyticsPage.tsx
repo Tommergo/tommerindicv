@@ -65,7 +65,7 @@ const SportsAnalyticsPage = () => (
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
           <div className="relative z-10">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-primary/20 text-primary backdrop-blur-sm mb-4">
-              <Trophy size={14} /> 2nd Place — Sharks Innovation Competition
+              <Trophy size={14} /> 2nd Place: Sharks Innovation Competition
             </span>
             <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-3">
               Sports Data Analytics
@@ -130,7 +130,7 @@ const SportsAnalyticsPage = () => (
               <BudgetPieChart />
             </DashCard>
           </div>
-          <DashCard title="Logistic Regression — Pro Probability" icon={<TrendingUp size={18} />} accent="hsl(160, 84%, 39%)" compact>
+          <DashCard title="Logistic Regression: Pro Probability" icon={<TrendingUp size={18} />} accent="hsl(160, 84%, 39%)" compact>
             <p className="text-xs text-muted-foreground mb-4">Predicted probability of becoming professional vs years of training across sport categories</p>
             <LogisticRegressionChart />
             <InsightBox text="Athletes in smaller sports show a steeper improvement curve, suggesting untapped potential if funding is redistributed." color="hsl(43, 96%, 56%)" />
