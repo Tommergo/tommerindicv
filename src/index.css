@@ -158,6 +158,33 @@ html {
   --adv-gold-light: 42 90% 60%;
   --adv-red: 6 60% 40%;
   --adv-jungle: 120 22% 30%;
+  /* override semantic tokens so all existing sections adopt the journal palette */
+  --background: var(--adv-parchment);
+  --foreground: var(--adv-ink);
+  --card: var(--adv-paper);
+  --card-foreground: var(--adv-ink);
+  --popover: var(--adv-paper);
+  --popover-foreground: var(--adv-ink);
+  --primary: var(--adv-leather);
+  --primary-foreground: var(--adv-parchment);
+  --secondary: var(--adv-parchment-dark);
+  --secondary-foreground: var(--adv-ink);
+  --muted: var(--adv-parchment-dark);
+  --muted-foreground: var(--adv-ink-soft);
+  --accent: var(--adv-red);
+  --accent-foreground: var(--adv-parchment);
+  --border: 26 30% 78%;
+  --input: 26 30% 78%;
+  --ring: var(--adv-gold);
+  --heading: var(--adv-ink);
+  --text-body: var(--adv-ink-soft);
+  --primary-light: 42 60% 90%;
+  --gradient-hero: radial-gradient(110% 85% at 12% 0%, hsl(44 70% 96%) 0%, hsl(var(--adv-parchment)) 55%),
+    radial-gradient(85% 70% at 92% 10%, hsl(38 80% 88% / 0.8) 0%, transparent 62%);
+  --gradient-play: linear-gradient(120deg, hsl(var(--adv-gold)), hsl(var(--adv-red)));
+  --gradient-accent: linear-gradient(135deg, hsl(var(--adv-gold)), hsl(var(--adv-red)));
+  --card-shadow: 0 12px 28px -14px hsl(var(--adv-leather-dark) / 0.5);
+  --card-shadow-hover: 0 20px 40px -16px hsl(var(--adv-leather-dark) / 0.6);
   background-color: hsl(var(--adv-parchment));
   background-image:
     radial-gradient(120% 90% at 50% 0%, hsl(44 70% 96%) 0%, transparent 60%),
