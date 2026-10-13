@@ -78,7 +78,7 @@ const PlayTab = () => {
       <div className="text-center mb-8">
         <span className="adv-stamp mb-4">A web game by Tommer Goldstein</span>
         <h1 className="adv-title font-adv-display font-extrabold text-3xl md:text-5xl leading-tight mt-4">
-          INDY &amp; THE TEMPLE<br />OF THE SERPENT
+          INDIANA JONES<br />AND THE CALL OF CTHULHU
         </h1>
         <p className="font-adv-type adv-text-soft mt-3 text-sm md:text-base">An original adventure, designed and built from scratch</p>
       </div>
@@ -89,7 +89,7 @@ const PlayTab = () => {
           style={isFullscreen ? { width: "min(100%, calc((100vh - 6rem) * 16 / 9))" } : undefined}
         >
           {started ? (
-            <iframe ref={iframeRef} src={GAME_URL} title="Indy and the Temple of the Serpent" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen onLoad={onGameLoad} />
+            <iframe ref={iframeRef} src={GAME_URL} title="Indiana Jones and the Call of Cthulhu" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen onLoad={onGameLoad} />
           ) : (
             <button onClick={() => setStarted(true)} className="absolute inset-0 flex flex-col items-center justify-center gap-6 group">
               <Compass size={44} className="text-[hsl(var(--adv-gold-light))] group-hover:rotate-45 transition-transform duration-500" />
