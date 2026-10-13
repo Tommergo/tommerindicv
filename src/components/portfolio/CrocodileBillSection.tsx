@@ -3,6 +3,7 @@ import bandBw from "@/assets/band-bw.png";
 import bandLive from "@/assets/band-live.png";
 import bandEvent from "@/assets/band-event.jpeg";
 import barIlanStage from "@/assets/bar-ilan-stage.jpeg";
+import cover from "@/assets/projects/crocodile-bill-inc.jpg";
 
 const services = [
   { icon: Music, title: "Live music", desc: "Shows by the blues, soul and funk band Crocodile Bill, where I am manager and guitarist." },
@@ -41,6 +42,10 @@ const CrocodileBillSection = () => (
       A business I run alongside my degree. Every event is a small project with a client, a budget, suppliers, a crew
       and a hard deadline: the moment the show starts.
     </p>
+
+    <figure className="adv-paper p-3 pb-4 mb-8 relative" style={{ transform: "rotate(-0.6deg)" }}>
+      <img src={cover} alt="Crocodile Bill Inc. field journal: concert, logistics and A/B testing" width={1024} height={739} loading="lazy" className="w-full h-auto rounded-sm border border-[hsl(var(--adv-leather)/0.35)]" />
+    </figure>
 
     <div className="grid md:grid-cols-2 gap-4 mb-8">
       {services.map((s) => (
