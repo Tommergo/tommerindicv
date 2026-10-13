@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
@@ -145,85 +145,75 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ===== Pixel Explorer theme (Indiana Jones x Nitrome) ===== */
-.pixel-theme {
-  --px-night: 25 30% 8%;
-  --px-leather: 24 45% 22%;
-  --px-leather-light: 26 45% 32%;
-  --px-gold: 42 90% 55%;
-  --px-gold-dark: 36 80% 34%;
-  --px-sand: 40 55% 82%;
-  --px-parchment: 42 60% 88%;
-  --px-ink: 25 40% 14%;
-  --px-stone: 30 8% 42%;
-  --px-stone-dark: 30 10% 24%;
-  --px-stone-light: 35 10% 60%;
-  --px-jungle: 120 30% 30%;
-  --px-red: 6 70% 45%;
-  background-color: hsl(var(--px-night));
+/* ===== Adventure Journal theme (Indiana Jones) ===== */
+.adv-theme {
+  --adv-parchment: 42 55% 93%;
+  --adv-parchment-dark: 40 45% 86%;
+  --adv-paper: 44 60% 96%;
+  --adv-ink: 25 35% 15%;
+  --adv-ink-soft: 28 25% 32%;
+  --adv-leather: 24 45% 28%;
+  --adv-leather-dark: 22 50% 18%;
+  --adv-gold: 38 80% 42%;
+  --adv-gold-light: 42 90% 60%;
+  --adv-red: 6 60% 40%;
+  --adv-jungle: 120 22% 30%;
+  background-color: hsl(var(--adv-parchment));
   background-image:
-    linear-gradient(hsl(var(--px-leather) / 0.35) 2px, transparent 2px),
-    linear-gradient(90deg, hsl(var(--px-leather) / 0.35) 2px, transparent 2px);
-  background-size: 32px 32px;
-  color: hsl(var(--px-sand));
-  font-family: 'VT323', monospace;
-  image-rendering: pixelated;
+    radial-gradient(120% 90% at 50% 0%, hsl(44 70% 96%) 0%, transparent 60%),
+    radial-gradient(hsl(var(--adv-leather) / 0.06) 1px, transparent 1px);
+  background-size: auto, 22px 22px;
+  color: hsl(var(--adv-ink));
+  font-family: 'DM Sans', sans-serif;
 }
-.pixel-theme h1, .pixel-theme h2, .pixel-theme h3 { color: hsl(var(--px-gold)); font-family: 'Press Start 2P', monospace; }
-.font-pixel { font-family: 'Press Start 2P', monospace; }
-.font-pixel-body { font-family: 'VT323', monospace; }
-.px-title { text-shadow: 4px 4px 0 hsl(var(--px-red)), 8px 8px 0 hsl(var(--px-ink)); letter-spacing: 2px; }
-.px-text-gold { color: hsl(var(--px-gold)); }
-.px-text-sand { color: hsl(var(--px-sand)); }
-.px-text-ink { color: hsl(var(--px-ink)); }
+.adv-theme h1, .adv-theme h2, .adv-theme h3 { color: hsl(var(--adv-ink)); font-family: 'Cinzel', serif; }
+.font-adv-display { font-family: 'Cinzel', serif; }
+.font-adv-type { font-family: 'Special Elite', monospace; }
+.adv-title { text-shadow: 1px 1px 0 hsl(var(--adv-gold-light) / 0.6), 2px 2px 0 hsl(var(--adv-leather) / 0.25); letter-spacing: 1px; }
+.adv-text-gold { color: hsl(var(--adv-gold)); }
+.adv-text-soft { color: hsl(var(--adv-ink-soft)); }
 
-/* chunky press-down buttons */
-.px-btn {
-  font-family: 'Press Start 2P', monospace; font-size: 12px; line-height: 1.4;
-  display: inline-flex; align-items: center; gap: 10px; padding: 14px 18px;
-  background: hsl(var(--px-gold)); color: hsl(var(--px-ink));
-  border: 4px solid hsl(var(--px-ink));
-  box-shadow: inset -4px -4px 0 hsl(var(--px-gold-dark)), inset 4px 4px 0 hsl(48 100% 75%), 0 6px 0 hsl(var(--px-ink));
-  transform: translateY(0); transition: transform 60ms steps(1), box-shadow 60ms steps(1);
-  cursor: pointer; user-select: none;
+/* leather / gold buttons */
+.adv-btn {
+  font-family: 'Cinzel', serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em;
+  display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px;
+  background: linear-gradient(180deg, hsl(var(--adv-gold-light)), hsl(var(--adv-gold)));
+  color: hsl(var(--adv-leather-dark));
+  border: 2px solid hsl(var(--adv-leather-dark)); border-radius: 6px;
+  box-shadow: 0 3px 0 hsl(var(--adv-leather-dark)), 0 8px 18px -8px hsl(var(--adv-leather) / 0.5);
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  cursor: pointer; user-select: none; text-transform: uppercase;
 }
-.px-btn:hover { filter: brightness(1.08); }
-.px-btn:active, .px-btn[data-active="true"] {
-  transform: translateY(6px);
-  box-shadow: inset -4px -4px 0 hsl(var(--px-gold-dark)), inset 4px 4px 0 hsl(48 100% 75%), 0 0 0 hsl(var(--px-ink));
-}
-.px-btn-leather { background: hsl(var(--px-leather-light)); color: hsl(var(--px-sand));
-  box-shadow: inset -4px -4px 0 hsl(var(--px-leather)), inset 4px 4px 0 hsl(26 40% 45%), 0 6px 0 hsl(var(--px-ink)); }
-.px-btn-leather:active, .px-btn-leather[data-active="true"] {
-  box-shadow: inset -4px -4px 0 hsl(var(--px-leather)), inset 4px 4px 0 hsl(26 40% 45%), 0 0 0 hsl(var(--px-ink)); }
-.px-btn-stone { background: hsl(var(--px-stone)); color: hsl(var(--px-sand)); padding: 10px 12px;
-  box-shadow: inset -4px -4px 0 hsl(var(--px-stone-dark)), inset 4px 4px 0 hsl(var(--px-stone-light)), 0 5px 0 hsl(var(--px-ink)); }
-.px-btn-stone:active { transform: translateY(5px);
-  box-shadow: inset -4px -4px 0 hsl(var(--px-stone-dark)), inset 4px 4px 0 hsl(var(--px-stone-light)), 0 0 0 hsl(var(--px-ink)); }
+.adv-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.adv-btn:active, .adv-btn[data-active="true"] { transform: translateY(2px); box-shadow: 0 1px 0 hsl(var(--adv-leather-dark)); }
+.adv-btn-leather { background: linear-gradient(180deg, hsl(26 45% 36%), hsl(var(--adv-leather))); color: hsl(var(--adv-parchment)); }
+.adv-btn-ghost { background: hsl(var(--adv-paper)); color: hsl(var(--adv-ink)); }
 
-/* stone relic frame */
-.px-stone-frame {
-  padding: 18px; background: hsl(var(--px-stone));
-  border: 4px solid hsl(var(--px-ink));
-  box-shadow: inset -8px -8px 0 hsl(var(--px-stone-dark)), inset 8px 8px 0 hsl(var(--px-stone-light)), 0 10px 0 hsl(var(--px-ink));
-  background-image: radial-gradient(hsl(var(--px-stone-dark)) 2px, transparent 2px);
-  background-size: 14px 14px;
+/* journal paper card */
+.adv-paper {
+  background: hsl(var(--adv-paper)); color: hsl(var(--adv-ink));
+  border: 1px solid hsl(var(--adv-leather) / 0.35); border-radius: 4px;
+  box-shadow: 0 1px 0 hsl(45 80% 98%) inset, 0 12px 28px -14px hsl(var(--adv-leather-dark) / 0.55);
 }
-.px-parchment {
-  background: hsl(var(--px-parchment)); color: hsl(var(--px-ink));
-  border: 4px solid hsl(var(--px-ink));
-  box-shadow: inset -6px -6px 0 hsl(var(--px-sand)), inset 6px 6px 0 hsl(45 80% 94%), 8px 8px 0 hsl(var(--px-ink));
+.adv-leather-panel {
+  background: linear-gradient(180deg, hsl(26 45% 30%), hsl(var(--adv-leather-dark)));
+  border-bottom: 3px solid hsl(var(--adv-gold));
+  box-shadow: 0 10px 30px -12px hsl(var(--adv-leather-dark) / 0.8);
 }
-.px-panel {
-  background: hsl(var(--px-leather)); border: 4px solid hsl(var(--px-ink));
-  box-shadow: inset -6px -6px 0 hsl(24 45% 15%), inset 6px 6px 0 hsl(var(--px-leather-light)), 0 8px 0 hsl(var(--px-ink));
+.adv-frame {
+  padding: 14px; border-radius: 8px;
+  background: linear-gradient(180deg, hsl(26 45% 32%), hsl(var(--adv-leather-dark)));
+  border: 2px solid hsl(var(--adv-leather-dark));
+  box-shadow: 0 18px 40px -18px hsl(var(--adv-leather-dark) / 0.8), inset 0 1px 0 hsl(30 40% 45%);
 }
-.px-polaroid {
-  background: hsl(var(--px-parchment)); color: hsl(var(--px-ink)); padding: 12px 12px 18px;
-  border: 4px solid hsl(var(--px-ink)); box-shadow: 8px 8px 0 hsl(var(--px-ink));
-  transition: transform 120ms steps(2);
+.adv-tape {
+  width: 96px; height: 26px; background: hsl(var(--adv-gold-light) / 0.75);
+  box-shadow: 0 1px 3px hsl(var(--adv-leather-dark) / 0.3);
+  transform: rotate(-3deg);
 }
-.px-polaroid:hover { transform: rotate(0deg) translateY(-6px) !important; }
-.px-clip { width: 28px; height: 14px; background: hsl(var(--px-stone-light)); border: 4px solid hsl(var(--px-ink)); }
-@keyframes px-blink { 50% { opacity: 0; } }
-.px-blink { animation: px-blink 1s steps(1) infinite; }
+.adv-stamp {
+  font-family: 'Special Elite', monospace; font-size: 11px; letter-spacing: 0.12em;
+  color: hsl(var(--adv-red)); border: 2px solid hsl(var(--adv-red) / 0.7); border-radius: 4px;
+  padding: 3px 10px; text-transform: uppercase; transform: rotate(-2deg); display: inline-block;
+}
+.adv-divider { height: 2px; background: repeating-linear-gradient(90deg, hsl(var(--adv-leather) / 0.5) 0 10px, transparent 10px 18px); }
