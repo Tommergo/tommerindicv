@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeX, Maximize, Minimize, HelpCircle, Play, X, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Volume2, VolumeX, Maximize, Minimize, HelpCircle, Play, X, Compass, BarChart3, Download } from "lucide-react";
+import { RESUME_PDF } from "@/components/journal/FieldNotes";
 import Navbar from "@/components/portfolio/Navbar";
 
 const GAME_URL = "/games/temple-of-the-serpent.html";
@@ -129,6 +131,19 @@ const PlayTab = () => {
       <p className="text-center font-adv-type adv-text-soft mt-8 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
         I designed and built this whole game myself, using modern AI tools for the soundtrack and the art, to push my creativity and learn fast.
       </p>
+
+      <div className="adv-paper relative max-w-3xl mx-auto mt-12 p-6 md:p-8 text-center">
+        <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2" aria-hidden="true" />
+        <p className="font-adv-type text-xs tracking-widest uppercase text-[hsl(var(--adv-red))]">The explorer behind the game</p>
+        <h2 className="font-adv-display font-extrabold text-2xl md:text-3xl mt-2">Tommer Goldstein · Data Analyst, Gaming</h2>
+        <p className="adv-text-soft text-base md:text-lg leading-relaxed mt-3">
+          Industrial Engineering &amp; Information Systems student at Bar-Ilan. I turn real operational data into dashboards and KPIs people act on.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 mt-6">
+          <Link to="/projects" className="adv-btn"><BarChart3 size={17} /> See the Data Work</Link>
+          <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn adv-btn-leather"><Download size={17} /> Download CV</a>
+        </div>
+      </div>
     </section>
   );
 };

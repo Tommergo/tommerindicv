@@ -50,18 +50,24 @@ export const PolaroidGrid = ({ items }: { items: FieldNote[] }) => (
   </div>
 );
 
-export const PageHeading = ({ stamp, title, subtitle }: { stamp: string; title: string; subtitle?: string }) => (
-  <div className="text-center mb-10">
-    <span className="adv-stamp">{stamp}</span>
-    <h1 className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4 mb-2">{title}</h1>
-    {subtitle && <p className="font-adv-type adv-text-soft text-sm md:text-base">{subtitle}</p>}
-  </div>
-);
+export const CHIP = "font-adv-type text-xs px-2 py-1 rounded border border-[hsl(var(--adv-leather)/0.4)] bg-[hsl(var(--adv-parchment-dark))]";
+export const ICON_BADGE = "w-11 h-11 shrink-0 rounded-full flex items-center justify-center bg-[hsl(var(--adv-leather))] text-[hsl(var(--adv-gold-light))] shadow-[0_2px_6px_hsl(var(--adv-leather-dark)/0.35)]";
+
+export const PageHeading = ({ stamp, title, subtitle, level = 1 }: { stamp: string; title: string; subtitle?: string; level?: 1 | 2 }) => {
+  const H = level === 1 ? "h1" : "h2";
+  return (
+    <div className="text-center mb-10">
+      <span className="adv-stamp">{stamp}</span>
+      <H className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4 mb-2">{title}</H>
+      {subtitle && <p className="font-adv-type adv-text-soft text-sm md:text-base">{subtitle}</p>}
+    </div>
+  );
+};
 
 const STATS = [
   { value: "60", label: "Students I teach Tableau to" },
   { value: "95", label: "Final project grade, Meir Medical Center" },
-  { value: "2nd", label: "Place, Shark Tank competition" },
+  { value: "2nd place", label: "Sharks Innovation Competition" },
 ];
 
 export const ExplorerCard = () => (

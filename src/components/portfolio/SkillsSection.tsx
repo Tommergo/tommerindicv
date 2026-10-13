@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { PageHeading, ICON_BADGE, CHIP } from "@/components/journal/FieldNotes";
 import { BarChart3, LayoutDashboard, FlaskConical, Presentation } from "lucide-react";
 
 const groups = [
@@ -35,17 +36,7 @@ const groups = [
 const SkillsSection = () => (
   <section id="skills" className="section-padding">
     <div className="container mx-auto px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-14"
-      >
-        <h2 className="text-3xl md:text-5xl font-bold mb-3">
-          Skills built for <span className="text-gradient-play">product analytics</span>
-        </h2>
-        <p className="text-body">Tools and competencies I bring to a data team.</p>
-      </motion.div>
+      <PageHeading level={2} stamp="Field Kit" title="SKILLS" subtitle="Tools and competencies I bring to a data team" />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {groups.map((g, i) => (
@@ -55,21 +46,14 @@ const SkillsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-3xl p-6 card-shadow hover:card-shadow-hover transition-all duration-300 border border-border hover:border-primary/40 group"
+            className="adv-paper relative p-6"
           >
-            <div
-              className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4"
-              style={{ background: `color-mix(in srgb, ${g.color} 18%, transparent)` }}
-            >
-              <g.icon size={22} style={{ color: g.color }} />
-            </div>
-            <h3 className="font-display font-semibold text-lg mb-1">{g.title}</h3>
-            <p className="text-body text-xs mb-3 leading-relaxed">{g.subtitle}</p>
-            <div className="flex flex-wrap gap-2">
+            <div className={`${ICON_BADGE} mb-4`}><g.icon size={20} /></div>
+            <h3 className="font-adv-display font-bold text-lg mb-1">{g.title}</h3>
+            <p className="adv-text-soft text-sm mb-4 leading-relaxed">{g.subtitle}</p>
+            <div className="flex flex-wrap gap-1.5">
               {g.skills.map((s) => (
-                <span key={s} className="text-xs px-2.5 py-1 rounded-md bg-secondary text-muted-foreground">
-                  {s}
-                </span>
+                <span key={s} className={CHIP}>{s}</span>
               ))}
             </div>
           </motion.div>

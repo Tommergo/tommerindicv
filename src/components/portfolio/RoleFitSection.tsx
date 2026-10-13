@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Target, Database, LayoutDashboard, Gauge, FlaskConical, Presentation, Code2 } from "lucide-react";
+import { PageHeading, ICON_BADGE } from "@/components/journal/FieldNotes";
+import { Database, LayoutDashboard, Gauge, FlaskConical, Presentation, Code2 } from "lucide-react";
 
 const fits = [
   {
@@ -33,7 +34,7 @@ const fits = [
     icon: Presentation,
     req: "Presenting insights to non-technical stakeholders",
     proof:
-      "Presented wartime findings to a hospital's senior management, and a budget-vs-results analysis to a sports club's leadership. 2nd place in a Shark Tank competition judged by entrepreneurs and academics.",
+      "Presented wartime findings to a hospital's senior management, and a budget-vs-results analysis to a sports club's leadership. 2nd place in the Sharks Innovation Competition, judged by entrepreneurs and academics.",
     color: "hsl(var(--primary))",
   },
   {
@@ -46,25 +47,9 @@ const fits = [
 ];
 
 const RoleFitSection = () => (
-  <section id="fit" className="section-padding relative overflow-hidden">
-    <div className="absolute inset-0 grid-noise opacity-20" />
-    <div className="container mx-auto px-4 relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-14 max-w-2xl mx-auto"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 text-accent text-xs font-bold mb-6 uppercase tracking-wide">
-          <Target size={14} /> Role fit
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">
-          Why I fit <span className="text-gradient-play">Data Analyst, Gaming</span>
-        </h2>
-        <p className="text-body">
-          Every requirement in the job description, matched to something I have already done.
-        </p>
-      </motion.div>
+  <section id="fit" className="section-padding">
+    <div className="container mx-auto px-4">
+      <PageHeading level={2} stamp="Role Fit" title="WHY I FIT: DATA ANALYST, GAMING" subtitle="Every requirement in the job description, matched to something I have already done" />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {fits.map((f, i) => (
@@ -74,20 +59,16 @@ const RoleFitSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.07 }}
-            className="bg-card rounded-3xl p-6 border border-border card-shadow hover:card-shadow-hover hover:border-primary/40 transition-all duration-300"
+            className="adv-paper relative p-6"
           >
-            <div
-              className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4"
-              style={{ background: `color-mix(in srgb, ${f.color} 18%, transparent)` }}
-            >
-              <f.icon size={22} style={{ color: f.color }} />
+            <div className="flex items-center gap-3 mb-4 pb-3 border-b border-dashed border-[hsl(var(--adv-leather)/0.3)]">
+              <div className={ICON_BADGE}><f.icon size={20} /></div>
+              <h3 className="font-adv-display font-bold text-lg leading-snug">{f.req}</h3>
             </div>
-            <h3 className="font-display font-semibold text-base mb-3 leading-snug">{f.req}</h3>
-            <p className="text-body text-base leading-relaxed">{f.proof}</p>
+            <p className="adv-text-soft text-base leading-relaxed">{f.proof}</p>
           </motion.div>
         ))}
       </div>
-
     </div>
   </section>
 );

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Briefcase, CheckCircle2, Server, GraduationCap, Gamepad2 } from "lucide-react";
+import { PageHeading, ICON_BADGE, CHIP } from "@/components/journal/FieldNotes";
+import { CheckCircle2, Server, GraduationCap, Gamepad2 } from "lucide-react";
 import redisLogo from "@/assets/redis-logo.png";
 
 const experiences = [
@@ -40,57 +41,46 @@ const experiences = [
 const ExperienceSection = () => (
   <section id="experience" className="section-padding">
     <div className="container mx-auto px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-14"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold mb-6">
-          <Briefcase size={14} /> Experience
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-3">Professional Experience</h2>
-      </motion.div>
+      <PageHeading stamp="Expedition Log" title="EXPERIENCE" subtitle="Where I have worked, and what I did there" />
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <ol className="relative max-w-3xl mx-auto">
+        <span aria-hidden="true" className="absolute left-[21px] top-2 bottom-2 border-l-2 border-dashed border-[hsl(var(--adv-leather)/0.45)]" />
         {experiences.map((exp, i) => (
-          <motion.div
+          <motion.li
             key={exp.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-2xl p-6 md:p-8 card-shadow hover:card-shadow-hover transition-all duration-300 border border-border hover:border-primary/30"
+            className="relative pl-16 pb-10 last:pb-0"
           >
-            {"logo" in exp && exp.logo ? (
-              <img src={exp.logo} alt={exp.title} className="w-11 h-11 rounded-xl object-contain mb-4" />
-            ) : (
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <exp.icon className="text-primary" size={22} />
+            <div className={`${ICON_BADGE} absolute left-0 top-1 overflow-hidden`}>
+              {"logo" in exp && exp.logo ? (
+                <img src={exp.logo} alt="" className="w-7 h-7 object-contain" />
+              ) : (
+                <exp.icon size={20} />
+              )}
+            </div>
+            <div className="adv-paper p-6 md:p-7">
+              <h3 className="font-adv-display font-bold text-xl mb-1 leading-snug">{exp.title}</h3>
+              <p className="font-adv-type adv-text-soft text-sm mb-4">{exp.desc}</p>
+              <ul className="space-y-2 mb-5">
+                {exp.responsibilities.map((r) => (
+                  <li key={r} className="flex items-start gap-2">
+                    <CheckCircle2 className="adv-text-gold shrink-0 mt-1" size={15} />
+                    <span className="adv-text-soft text-base leading-relaxed">{r}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-1.5">
+                {exp.skills.map((s) => (
+                  <span key={s} className={CHIP}>{s}</span>
+                ))}
               </div>
-            )}
-            <h3 className="font-display font-semibold text-lg mb-2">{exp.title}</h3>
-            <p className="text-body text-base mb-4">{exp.desc}</p>
-
-            <div className="space-y-2 mb-5">
-              {exp.responsibilities.map((r) => (
-                <div key={r} className="flex items-start gap-2">
-                  <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={14} />
-                  <span className="text-body text-base">{r}</span>
-                </div>
-              ))}
             </div>
-
-            <div className="flex flex-wrap gap-1.5">
-              {exp.skills.map((s) => (
-                <span key={s} className="text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary font-medium">
-                  {s}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+          </motion.li>
         ))}
-      </div>
+      </ol>
     </div>
   </section>
 );
