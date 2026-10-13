@@ -10,12 +10,12 @@ const data = [
 ];
 
 const COLORS = [
-  "hsl(217, 91%, 60%)",
-  "hsl(239, 84%, 67%)",
-  "hsl(271, 81%, 56%)",
-  "hsl(38, 92%, 50%)",
-  "hsl(160, 84%, 39%)",
-  "hsl(215, 20%, 75%)",
+  "hsl(205, 38%, 36%)",
+  "hsl(330, 28%, 38%)",
+  "hsl(24, 45%, 36%)",
+  "hsl(30, 75%, 50%)",
+  "hsl(120, 28%, 32%)",
+  "hsl(35, 20%, 68%)",
 ];
 
 const BudgetPieChart = () => (
@@ -43,8 +43,8 @@ const BudgetPieChart = () => (
             fontSize: 12,
             boxShadow: "0 8px 30px rgba(0,0,0,0.3)",
             padding: "8px 14px",
-            background: "hsl(222, 47%, 16%)",
-            color: "hsl(210, 40%, 96%)",
+            background: "hsl(22, 50%, 18%)",
+            color: "hsl(42, 55%, 93%)",
           }}
           formatter={(value: number) => [`₪${value}K`, "Budget"]}
         />

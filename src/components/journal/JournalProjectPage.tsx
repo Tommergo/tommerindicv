@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Target, Wrench, BookOpen, Award } from "lucide-react";
+import { ArrowLeft, Target, Wrench, BookOpen, Award, Search } from "lucide-react";
 import Navbar from "@/components/portfolio/Navbar";
 import Footer from "@/components/portfolio/Footer";
 
@@ -14,6 +14,12 @@ export interface JournalProject {
   outcome: string;
 }
 
+interface JournalProps {
+  project: JournalProject;
+  evidence?: React.ReactNode;
+  backTo?: { href: string; label: string };
+}
+
 const Section = ({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) => (
   <div className="adv-paper p-6 md:p-8">
     <h2 className="font-adv-display font-bold text-lg md:text-xl flex items-center gap-3 mb-4">
@@ -23,13 +29,13 @@ const Section = ({ icon, title, children }: { icon: React.ReactNode; title: stri
   </div>
 );
 
-const JournalProjectPage = ({ project }: { project: JournalProject }) => (
+const JournalProjectPage = ({ project, evidence, backTo = { href: "/projects", label: "Back to Field Notes" } }: JournalProps) => (
   <div className="adv-theme min-h-screen">
     <Navbar />
     <main className="pt-24 pb-16 container mx-auto px-4">
       <div className="max-w-4xl mx-auto">
-        <Link to="/projects" className="inline-flex items-center gap-2 font-adv-display font-bold text-xs tracking-wider uppercase adv-text-gold hover:underline mb-8">
-          <ArrowLeft size={14} /> Back to Field Notes
+        <Link to={backTo.href} className="inline-flex items-center gap-2 font-adv-display font-bold text-xs tracking-wider uppercase adv-text-gold hover:underline mb-8">
+          <ArrowLeft size={14} /> {backTo.label}
         </Link>
 
         <div className="text-center mb-10">
@@ -73,6 +79,22 @@ const JournalProjectPage = ({ project }: { project: JournalProject }) => (
           </Section>
         </div>
 
+      </div>
+
+      {evidence && (
+        <section className="max-w-6xl mx-auto mt-16" aria-labelledby="field-evidence">
+          <div className="text-center mb-8">
+            <span className="adv-stamp">Field Evidence</span>
+            <h2 id="field-evidence" className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4 mb-2 flex items-center justify-center gap-3">
+              <Search size={26} className="adv-text-gold" /> The Data Behind It
+            </h2>
+            <p className="font-adv-type adv-text-soft text-sm md:text-base">Charts, findings and recommendations from the original analysis</p>
+          </div>
+          {evidence}
+        </section>
+      )}
+
+      <div className="max-w-4xl mx-auto">
         <div className="adv-divider my-10" />
         <p className="text-center font-adv-type text-xs adv-text-soft">Recorded in the field journal of Tommer Goldstein</p>
       </div>

@@ -12,18 +12,18 @@ const data = [
 ];
 
 const colorMap: Record<string, string> = {
-  large: "hsl(217, 91%, 60%)",
-  medium: "hsl(271, 81%, 56%)",
-  small: "hsl(160, 84%, 39%)",
+  large: "hsl(205, 38%, 36%)",
+  medium: "hsl(24, 45%, 36%)",
+  small: "hsl(120, 28%, 32%)",
 };
 
 const BudgetChart = () => (
   <div>
     <ResponsiveContainer width="100%" height={240}>
       <BarChart data={data} margin={{ top: 5, right: 5, left: -15, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="hsl(222, 30%, 22%)" vertical={false} />
-        <XAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 20%, 60%)" }} axisLine={false} tickLine={false} />
-        <YAxis tick={{ fontSize: 10, fill: "hsl(215, 20%, 60%)" }} axisLine={false} tickLine={false} />
+        <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" vertical={false} />
+        <XAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} />
+        <YAxis tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} />
         <Tooltip
           contentStyle={{
             borderRadius: 14,
@@ -31,8 +31,8 @@ const BudgetChart = () => (
             fontSize: 12,
             boxShadow: "0 8px 30px rgba(0,0,0,0.3)",
             padding: "8px 14px",
-            background: "hsl(222, 47%, 16%)",
-            color: "hsl(210, 40%, 96%)",
+            background: "hsl(22, 50%, 18%)",
+            color: "hsl(42, 55%, 93%)",
           }}
           formatter={(value: number) => [`₪${value}K`, "Budget"]}
         />

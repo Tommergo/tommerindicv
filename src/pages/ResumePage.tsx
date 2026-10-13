@@ -6,11 +6,15 @@ import AboutSection from "@/components/portfolio/AboutSection";
 import GameShowcaseSection from "@/components/portfolio/GameShowcaseSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
+import { ExplorerCard } from "@/components/journal/FieldNotes";
 
 const ResumePage = () => (
   <div className="adv-theme min-h-screen">
     <Navbar />
-    <main>
+    <main className="pt-24">
+      <div className="container mx-auto px-4">
+        <ExplorerCard />
+      </div>
       <HeroSection />
       <RoleFitSection />
       <GrowthFunnelSection />

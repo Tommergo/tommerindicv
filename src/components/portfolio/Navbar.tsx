@@ -4,14 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const links = [
-  { label: "Game Home", href: "/" },
-  { label: "Resume", href: "/resume" },
+  { label: "Play Game", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "Skills & Experience", href: "/skills" },
+  { label: "Experience", href: "/experience" },
   { label: "Leadership", href: "/leadership" },
-  { label: "My Game", href: "/game" },
-  { label: "Contact", href: "/contact" },
+  { label: "About & Resume", href: "/resume" },
 ];
+
+const isActive = (pathname: string, href: string) =>
+  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,20 +22,16 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 adv-leather-panel">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="font-adv-display font-bold text-lg tracking-widest text-[hsl(var(--adv-gold-light))]">
-          TG<span className="text-[hsl(var(--adv-parchment))]">.</span>
+          TOMMER GOLDSTEIN
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-2">
           {links.map((l) => (
             <Link
               key={l.href}
               to={l.href}
-              className={`font-adv-display text-xs font-bold tracking-wider uppercase transition-colors ${
-                location.pathname === l.href
-                  ? "text-[hsl(var(--adv-gold-light))]"
-                  : "text-[hsl(var(--adv-parchment)/0.75)] hover:text-[hsl(var(--adv-gold-light))]"
-              }`}
+              className={`adv-btn !text-[11px] !py-2 !px-3.5 ${isActive(location.pathname, l.href) ? "" : "adv-btn-leather"}`}
             >
               {l.label}
             </Link>
@@ -62,7 +59,7 @@ const Navbar = () => {
                   to={l.href}
                   onClick={() => setOpen(false)}
                   className={`font-adv-display text-xs font-bold tracking-wider uppercase transition-colors py-2 ${
-                    location.pathname === l.href
+                    isActive(location.pathname, l.href)
                       ? "text-[hsl(var(--adv-gold-light))]"
                       : "text-[hsl(var(--adv-parchment)/0.75)] hover:text-[hsl(var(--adv-gold-light))]"
                   }`}

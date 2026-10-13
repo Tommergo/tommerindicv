@@ -1,17 +1,17 @@
 import Navbar from "@/components/portfolio/Navbar";
-import SkillsSection from "@/components/portfolio/SkillsSection";
-import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import Footer from "@/components/portfolio/Footer";
+import ExperienceSection from "@/components/portfolio/ExperienceSection";
+import SkillsSection from "@/components/portfolio/SkillsSection";
 
-const SkillsPage = () => (
+const ExperiencePage = () => (
   <div className="adv-theme min-h-screen">
     <Navbar />
     <div className="pt-16">
-      <SkillsSection />
       <ExperienceSection />
+      <SkillsSection />
     </div>
     <Footer />
   </div>
 );
 
-export default SkillsPage;
+export default ExperiencePage;

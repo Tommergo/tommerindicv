@@ -1,32 +1,8 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { Volume2, VolumeX, Maximize, HelpCircle, Play, FileText, Download, Mail, Linkedin, X, ArrowRight, Compass } from "lucide-react";
-import imgSports from "@/assets/projects/sports-analytics.jpg";
-import imgBadminton from "@/assets/projects/badminton-ml.jpg";
-import imgMemory from "@/assets/projects/memory-game.jpg";
-import imgFaces from "@/assets/projects/face-pca.jpg";
-import imgYouth from "@/assets/projects/youth-volunteers.jpg";
-import imgBand from "@/assets/projects/crocodile-bill.jpg";
+import { Volume2, VolumeX, Maximize, HelpCircle, Play, X, Compass } from "lucide-react";
+import Navbar from "@/components/portfolio/Navbar";
 
 const GAME_URL = "/games/temple-of-the-serpent.html";
-const RESUME_PDF = "/Tommer_Goldstein_CV.pdf";
-
-type Tab = "play" | "about" | "projects";
-const tabs: { id: Tab; label: string }[] = [
-  { id: "play", label: "Play Game" },
-  { id: "about", label: "About & Resume" },
-  { id: "projects", label: "Other Projects" },
-];
-
-const projects = [
-  { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgSports },
-  { title: "Sports Data Analytics", tag: "Tableau · Budget vs Results", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
-  { title: "Badminton Performance ML", tag: "Python · Regression", note: "Modeled player fatigue from match data with regression to predict performance drops.", to: "/projects/badminton-ml", img: imgBadminton },
-  { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Ran a controlled experiment on how music affects memory, tested with ANOVA.", to: "/projects/memory-game", img: imgMemory },
-  { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Built eigenfaces from scratch and classified faces with K-Nearest Neighbors.", to: "/projects/face-pca", img: imgFaces },
-  { title: "Youth Volunteers Initiative", tag: "Leadership · Ops", note: "Founded and ran a social initiative connecting youth volunteers with the community.", to: "/leadership", img: imgYouth },
-  { title: "Crocodile Bill", tag: "Band Manager", note: "Manage an independent band: logistics, budget, partners and promotion. Ran A/B tests on social post formats.", to: "/leadership", img: imgBand },
-];
 
 const PlayTab = () => {
   const [started, setStarted] = useState(false);
@@ -92,81 +68,14 @@ const PlayTab = () => {
   );
 };
 
-const AboutTab = () => (
-  <section className="max-w-3xl mx-auto">
-    <div className="text-center mb-8">
-      <span className="adv-stamp">Expedition File №1</span>
-      <h2 className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4">THE EXPLORER</h2>
-    </div>
-    <div className="adv-paper p-6 md:p-10 relative">
-      <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2" />
-      <p className="text-base md:text-lg leading-relaxed">
-        Hi, I'm <strong>Tommer Goldstein</strong>, a fourth-year Industrial Engineering and Information Systems student at
-        Bar-Ilan University. I analyse real operational data, build Tableau dashboards, and present findings to the
-        people who decide. I also build games in my own time: I designed and shipped this one from scratch.
-        I'm looking for a Data Analyst role in gaming.
-      </p>
-    </div>
-    <div className="flex flex-wrap justify-center gap-4 mt-10">
-      <Link to="/resume" className="adv-btn adv-btn-leather"><FileText size={17} /> View Full Resume</Link>
-      <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn"><Download size={17} /> Download PDF</a>
-    </div>
-    <div className="flex flex-wrap justify-center gap-6 mt-8 font-adv-type text-sm">
-      <a href="mailto:tommer1999@gmail.com" className="inline-flex items-center gap-2 adv-text-gold hover:underline"><Mail size={16} /> tommer1999@gmail.com</a>
-      <a href="https://linkedin.com/in/tommer-goldstein-6784a5248" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 adv-text-gold hover:underline"><Linkedin size={16} /> LinkedIn</a>
-    </div>
-  </section>
+const Index = () => (
+  <div className="adv-theme min-h-screen">
+    <Navbar />
+    <main className="container mx-auto px-4 pt-24 pb-10 md:pb-14">
+      <PlayTab />
+    </main>
+    <footer className="text-center font-adv-type text-xs adv-text-soft pb-8">© 2026 Tommer Goldstein · All relics reserved</footer>
+  </div>
 );
-
-const ProjectsTab = () => (
-  <section className="max-w-6xl mx-auto">
-    <div className="text-center mb-10">
-      <span className="adv-stamp">Archive of Expeditions</span>
-      <h2 className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4 mb-2">FIELD NOTES</h2>
-      <p className="font-adv-type adv-text-soft text-sm md:text-base">Expeditions in data, research and leadership</p>
-    </div>
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((p, i) => (
-        <Link key={p.title} to={p.to} className="adv-paper relative block p-4 pb-5 hover:-translate-y-1.5 transition-transform duration-200" style={{ transform: `rotate(${[-1.5, 1, -1, 1.5, -1, 1, -1.5][i]}deg)` }}>
-          <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" />
-          <div className="aspect-[4/3] overflow-hidden rounded-sm border border-[hsl(var(--adv-leather)/0.35)] mb-4">
-            <img src={p.img} alt={p.title} loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
-          </div>
-          <p className="font-adv-type text-[11px] tracking-widest text-[hsl(var(--adv-red))] mb-1.5 uppercase">{p.tag}</p>
-          <h3 className="font-adv-display font-bold text-lg leading-snug mb-2">{p.title}</h3>
-          <p className="text-sm adv-text-soft leading-relaxed">{p.note}</p>
-          <span className="inline-flex items-center gap-1.5 font-adv-display font-bold text-xs tracking-wider adv-text-gold mt-3 uppercase">Open File <ArrowRight size={13} /></span>
-        </Link>
-      ))}
-    </div>
-  </section>
-);
-
-const Index = () => {
-  const [tab, setTab] = useState<Tab>("play");
-  return (
-    <div className="adv-theme min-h-screen">
-      <header className="adv-leather-panel sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-adv-display font-bold text-lg text-[hsl(var(--adv-gold-light))] tracking-widest">TOMMER GOLDSTEIN</span>
-          <nav className="flex flex-wrap justify-center gap-3">
-            {tabs.map((t) => (
-              <button key={t.id} onClick={() => setTab(t.id)} data-active={tab === t.id}
-                className={`adv-btn !text-[11px] !py-2.5 !px-4 ${tab === t.id ? "" : "adv-btn-leather"}`}>
-                {t.label}
-              </button>
-            ))}
-          </nav>
-        </div>
-      </header>
-      <main className="container mx-auto px-4 py-10 md:py-14">
-        {tab === "play" && <PlayTab />}
-        {tab === "about" && <AboutTab />}
-        {tab === "projects" && <ProjectsTab />}
-      </main>
-      <footer className="text-center font-adv-type text-xs adv-text-soft pb-8">© 2026 Tommer Goldstein · All relics reserved</footer>
-    </div>
-  );
-};
 
 export default Index;

@@ -1,7 +1,7 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
 const data = [
-  { name: "Retention", value: 66, fill: "hsl(217, 91%, 60%)" },
+  { name: "Retention", value: 66, fill: "hsl(205, 38%, 36%)" },
 ];
 
 const RetentionGauge = () => (
@@ -21,7 +21,7 @@ const RetentionGauge = () => (
           <RadialBar
             dataKey="value"
             cornerRadius={10}
-            background={{ fill: "hsl(220, 14%, 92%)" }}
+            background={{ fill: "hsl(40, 40%, 86%)" }}
           />
         </RadialBarChart>
       </ResponsiveContainer>

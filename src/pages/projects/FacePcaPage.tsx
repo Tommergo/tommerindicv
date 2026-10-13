@@ -1,11 +1,12 @@
 import JournalProjectPage from "@/components/journal/JournalProjectPage";
+import { PCAContent } from "@/components/portfolio/ProjectsSection";
 import img from "@/assets/projects/face-pca.jpg";
 
 const FacePcaPage = () => (
   <JournalProjectPage
     project={{
       title: "Face Data Analysis (PCA)",
-      stamp: "Expedition File №4",
+      stamp: "Expedition File №5",
       tag: "Machine Learning · Eigenfaces · KNN",
       image: img,
       goal: "Understand face recognition from first principles: instead of using a library, build eigenfaces from scratch and classify faces with K-Nearest Neighbors.",
@@ -17,6 +18,7 @@ const FacePcaPage = () => (
       skills: ["PCA from Scratch", "KNN Classification", "NumPy", "Linear Algebra", "Image Processing", "Model Evaluation"],
       outcome: "A from-scratch face classification pipeline that demystifies how dimensionality reduction works, and proves I can build ML foundations, not just call APIs.",
     }}
+    evidence={<PCAContent />}
   />
 );
 

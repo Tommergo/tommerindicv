@@ -20,14 +20,14 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-hero" />
       <div className="absolute inset-0 grid-noise opacity-40" />
       <div className="absolute -top-20 right-0 w-[32rem] h-[32rem] bg-accent/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-0 -left-16 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-4 pt-28 pb-20 relative z-10">
+      <div className="container mx-auto px-4 pt-12 pb-20 relative z-10">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

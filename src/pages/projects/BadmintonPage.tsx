@@ -1,11 +1,12 @@
 import JournalProjectPage from "@/components/journal/JournalProjectPage";
+import { BadmintonContent } from "@/components/portfolio/ProjectsSection";
 import img from "@/assets/projects/badminton-ml.jpg";
 
 const BadmintonPage = () => (
   <JournalProjectPage
     project={{
       title: "Badminton Performance ML",
-      stamp: "Expedition File №2",
+      stamp: "Expedition File №3",
       tag: "Python · Regression · Sports Science",
       image: img,
       goal: "Discover how fatigue accumulates across a badminton match and whether performance drops can be predicted from rally data, turning raw match logs into actionable training insight.",
@@ -17,6 +18,7 @@ const BadmintonPage = () => (
       skills: ["Python", "Pandas", "Regression Modeling", "Feature Engineering", "Data Cleaning", "Matplotlib"],
       outcome: "A working predictive model that flags fatigue-driven performance drops, giving coaches a concrete signal for when to intervene in training and match strategy.",
     }}
+    evidence={<BadmintonContent />}
   />
 );
 

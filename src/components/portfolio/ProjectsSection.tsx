@@ -38,13 +38,13 @@ import RetentionGauge from "@/components/analytics/RetentionGauge";
 import { Button } from "@/components/ui/button";
 
 const CHART_COLORS = {
-  gold: "hsl(43, 96%, 56%)",
-  blue: "hsl(217, 91%, 60%)",
-  emerald: "hsl(160, 84%, 39%)",
-  rose: "hsl(350, 89%, 60%)",
-  purple: "hsl(271, 81%, 56%)",
-  amber: "hsl(38, 92%, 50%)",
-  slate: "hsl(215, 20%, 65%)",
+  gold: "hsl(38, 80%, 42%)",
+  blue: "hsl(205, 38%, 36%)",
+  emerald: "hsl(120, 28%, 32%)",
+  rose: "hsl(6, 60%, 46%)",
+  purple: "hsl(24, 45%, 36%)",
+  amber: "hsl(30, 75%, 50%)",
+  slate: "hsl(28, 18%, 48%)",
 };
 
 const tooltipStyle = {
@@ -54,14 +54,14 @@ const tooltipStyle = {
     fontSize: 12,
     boxShadow: "0 8px 30px rgba(0,0,0,0.3)",
     padding: "8px 14px",
-    background: "hsl(222, 47%, 16%)",
-    color: "hsl(210, 40%, 96%)",
+    background: "hsl(22, 50%, 18%)",
+    color: "hsl(42, 55%, 93%)",
   },
   itemStyle: {
-    color: "hsl(210, 40%, 96%)",
+    color: "hsl(42, 55%, 93%)",
   },
   labelStyle: {
-    color: "hsl(210, 40%, 96%)",
+    color: "hsl(42, 55%, 93%)",
   },
 };
 
@@ -186,31 +186,31 @@ const reach11Data = [
 
 // ── Sports Analytics KPIs ──
 const kpis = [
-  { label: "Athletes Analyzed", value: "1,247", icon: Users, trend: "+12%", up: true, color: "hsl(217, 91%, 60%)" },
-  { label: "Total Budget", value: "₪1.43M", icon: DollarSign, trend: "Concentrated", up: false, color: "hsl(43, 96%, 56%)" },
-  { label: "Avg Dropout Rate", value: "34%", icon: TrendingDown, trend: "-8% potential", up: true, color: "hsl(347, 77%, 50%)" },
-  { label: "Pro Conversion", value: "6.2%", icon: Activity, trend: "+2.1% possible", up: true, color: "hsl(160, 84%, 39%)" },
+  { label: "Athletes Analyzed", value: "1,247", icon: Users, trend: "+12%", up: true, color: "hsl(205, 38%, 36%)" },
+  { label: "Total Budget", value: "₪1.43M", icon: DollarSign, trend: "Concentrated", up: false, color: "hsl(38, 80%, 42%)" },
+  { label: "Avg Dropout Rate", value: "34%", icon: TrendingDown, trend: "-8% potential", up: true, color: "hsl(6, 60%, 40%)" },
+  { label: "Pro Conversion", value: "6.2%", icon: Activity, trend: "+2.1% possible", up: true, color: "hsl(120, 28%, 32%)" },
 ];
 
 const sportsInsights = [
-  { text: "Budget allocation is highly concentrated in 3 large sports", icon: DollarSign, color: "hsl(43, 96%, 56%)" },
-  { text: "Smaller sports demonstrate stronger long-term development ROI", icon: TrendingUp, color: "hsl(160, 84%, 39%)" },
-  { text: "Dropout peaks during age transitions, not early participation", icon: TrendingDown, color: "hsl(347, 77%, 50%)" },
-  { text: "Competitive programs have higher pressure & dropout risk", icon: Activity, color: "hsl(271, 81%, 56%)" },
+  { text: "Budget allocation is highly concentrated in 3 large sports", icon: DollarSign, color: "hsl(38, 80%, 42%)" },
+  { text: "Smaller sports demonstrate stronger long-term development ROI", icon: TrendingUp, color: "hsl(120, 28%, 32%)" },
+  { text: "Dropout peaks during age transitions, not early participation", icon: TrendingDown, color: "hsl(6, 60%, 40%)" },
+  { text: "Competitive programs have higher pressure & dropout risk", icon: Activity, color: "hsl(24, 45%, 36%)" },
 ];
 
 const sportsRecommendations = [
-  { title: "Redistribute Budget", desc: "Redirect funding toward emerging sports with proven development potential.", icon: DollarSign, gradient: "from-[hsl(217,91%,60%)] to-[hsl(43,96%,56%)]" },
-  { title: "Transition Support", desc: "Introduce structured support programs for athletes moving into competitive levels.", icon: Users, gradient: "from-[hsl(160,84%,39%)] to-[hsl(217,91%,60%)]" },
-  { title: "Data-Driven Tracking", desc: "Develop long-term athlete development tracking using continuous analytics.", icon: BarChart3, gradient: "from-[hsl(271,81%,56%)] to-[hsl(347,77%,50%)]" },
+  { title: "Redistribute Budget", desc: "Redirect funding toward emerging sports with proven development potential.", icon: DollarSign, gradient: "from-[hsl(205,38%,36%)] to-[hsl(38,80%,42%)]" },
+  { title: "Transition Support", desc: "Introduce structured support programs for athletes moving into competitive levels.", icon: Users, gradient: "from-[hsl(120,28%,32%)] to-[hsl(205,38%,36%)]" },
+  { title: "Data-Driven Tracking", desc: "Develop long-term athlete development tracking using continuous analytics.", icon: BarChart3, gradient: "from-[hsl(24,45%,36%)] to-[hsl(6,60%,40%)]" },
 ];
 
 const sportsTools = [
-  { name: "Python", color: "hsl(43, 96%, 56%)" },
-  { name: "Pandas", color: "hsl(217, 91%, 60%)" },
-  { name: "Matplotlib", color: "hsl(160, 84%, 39%)" },
-  { name: "Logistic Regression", color: "hsl(271, 81%, 56%)" },
-  { name: "Statistical Analysis", color: "hsl(347, 77%, 50%)" },
+  { name: "Python", color: "hsl(38, 80%, 42%)" },
+  { name: "Pandas", color: "hsl(205, 38%, 36%)" },
+  { name: "Matplotlib", color: "hsl(120, 28%, 32%)" },
+  { name: "Logistic Regression", color: "hsl(24, 45%, 36%)" },
+  { name: "Statistical Analysis", color: "hsl(6, 60%, 40%)" },
 ];
 
 // ── Badminton findings table ──
@@ -226,25 +226,26 @@ const badmintonFindings = [
 const DashCard = ({ title, icon, accent, compact, children }: {
   title: string; icon: React.ReactNode; accent?: string; compact?: boolean; children: React.ReactNode;
 }) => (
-  <div className={`rounded-2xl bg-card border border-border shadow-sm ${compact ? "p-5" : "p-6 md:p-8"} mt-4`}>
-    <div className="flex items-center gap-2.5 mb-4">
-      <span style={{ color: accent || "hsl(43, 96%, 56%)" }}>{icon}</span>
-      <h2 className={`${compact ? "text-sm" : "text-lg"} font-bold text-foreground`}>{title}</h2>
+  <div className={`adv-paper relative ${compact ? "p-5 pt-6" : "p-6 md:p-8 pt-7"} mt-6`}>
+    <div className="adv-tape absolute -top-3 left-6 z-10 !w-16 !h-5" aria-hidden="true" />
+    <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-dashed border-[hsl(var(--adv-leather)/0.3)]">
+      <span style={{ color: accent || "hsl(38, 80%, 42%)" }}>{icon}</span>
+      <h2 className={`${compact ? "text-sm" : "text-lg"} font-adv-display font-bold tracking-wide text-[hsl(var(--adv-ink))]`}>{title}</h2>
     </div>
     {children}
   </div>
 );
 
 const SectionHeader = ({ title, subtitle, color }: { title: string; subtitle: string; color: string }) => (
-  <div className="flex items-center gap-3 mb-1">
-    <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full" style={{ background: `${color}20`, color }}>{title}</span>
-    <h2 className="text-xl font-bold text-foreground">{subtitle}</h2>
+  <div className="flex flex-wrap items-center gap-3 mb-1">
+    <span className="adv-stamp !text-[10px]" style={{ color, borderColor: color }}>{title}</span>
+    <h2 className="text-xl md:text-2xl font-adv-display font-bold text-[hsl(var(--adv-ink))]">{subtitle}</h2>
   </div>
 );
 
 const InsightBox = ({ text, color }: { text: string; color?: string }) => (
-  <div className="mt-5 rounded-xl p-4 flex gap-3 items-start border" style={{ background: `${color || "hsl(43, 96%, 56%)"}10`, borderColor: `${color || "hsl(43, 96%, 56%)"}30` }}>
-    <Lightbulb size={18} style={{ color: color || "hsl(43, 96%, 56%)" }} className="shrink-0 mt-0.5" />
+  <div className="mt-5 rounded-xl p-4 flex gap-3 items-start border" style={{ background: `${color || "hsl(38, 80%, 42%)"}10`, borderColor: `${color || "hsl(38, 80%, 42%)"}30` }}>
+    <Lightbulb size={18} style={{ color: color || "hsl(38, 80%, 42%)" }} className="shrink-0 mt-0.5" />
     <p className="text-sm text-muted-foreground">{text}</p>
   </div>
 );
@@ -259,10 +260,10 @@ const projects = [
 ];
 
 /* ─── Sports Analytics Full Case Study ─── */
-const SportsAnalyticsContent = () => (
+export const SportsAnalyticsContent = () => (
   <div className="space-y-8">
     <div className="relative rounded-3xl overflow-hidden p-8 md:p-12"
-      style={{ background: "linear-gradient(135deg, hsl(222, 47%, 14%), hsl(222, 47%, 20%), hsl(43, 96%, 56% / 0.3))" }}>
+      style={{ background: "linear-gradient(135deg, hsl(var(--adv-paper)), hsl(var(--adv-parchment-dark)))", border: "1px solid hsl(var(--adv-leather) / 0.35)" }}>
       <div className="relative z-10">
         <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-primary/20 text-primary backdrop-blur-sm mb-4">
           <Trophy size={14} /> 2nd Place: Sharks Innovation Competition
@@ -283,7 +284,7 @@ const SportsAnalyticsContent = () => (
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${k.color}20` }}>
               <k.icon size={20} style={{ color: k.color }} />
             </div>
-            <span className={`inline-flex items-center gap-0.5 text-xs font-semibold px-2 py-0.5 rounded-full ${k.up ? "bg-[hsl(160,84%,39%)]/15 text-[hsl(160,84%,39%)]" : "bg-primary/15 text-primary"}`}>
+            <span className={`inline-flex items-center gap-0.5 text-xs font-semibold px-2 py-0.5 rounded-full ${k.up ? "bg-[hsl(120,28%,32%)]/15 text-[hsl(120,28%,32%)]" : "bg-primary/15 text-primary"}`}>
               {k.up ? <ArrowUpRight size={12} /> : <ArrowDownRight size={12} />}
               {k.trend}
             </span>
@@ -294,7 +295,7 @@ const SportsAnalyticsContent = () => (
       ))}
     </div>
 
-    <DashCard title="Project Overview" icon={<Target size={20} />} accent="hsl(43, 96%, 56%)">
+    <DashCard title="Project Overview" icon={<Target size={20} />} accent="hsl(38, 80%, 42%)">
       <div className="grid md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
           <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -316,33 +317,33 @@ const SportsAnalyticsContent = () => (
     </DashCard>
 
     <div>
-      <SectionHeader title="Challenge #1" subtitle="Budget Concentration Analysis" color="hsl(43, 96%, 56%)" />
+      <SectionHeader title="Challenge #1" subtitle="Budget Concentration Analysis" color="hsl(38, 80%, 42%)" />
       <div className="grid md:grid-cols-2 gap-4 mb-4">
-        <DashCard title="Budget by Sport" icon={<BarChart3 size={18} />} accent="hsl(43, 96%, 56%)" compact>
+        <DashCard title="Budget by Sport" icon={<BarChart3 size={18} />} accent="hsl(38, 80%, 42%)" compact>
           <BudgetChart />
         </DashCard>
-        <DashCard title="Budget Share" icon={<DollarSign size={18} />} accent="hsl(271, 81%, 56%)" compact>
+        <DashCard title="Budget Share" icon={<DollarSign size={18} />} accent="hsl(24, 45%, 36%)" compact>
           <BudgetPieChart />
         </DashCard>
       </div>
-      <DashCard title="Logistic Regression: Pro Probability" icon={<TrendingUp size={18} />} accent="hsl(160, 84%, 39%)" compact>
+      <DashCard title="Logistic Regression: Pro Probability" icon={<TrendingUp size={18} />} accent="hsl(120, 28%, 32%)" compact>
         <p className="text-xs text-muted-foreground mb-4">Predicted probability of becoming professional vs years of training across sport categories</p>
         <LogisticRegressionChart />
-        <InsightBox text="Athletes in smaller sports show a steeper improvement curve, suggesting untapped potential if funding is redistributed." color="hsl(43, 96%, 56%)" />
+        <InsightBox text="Athletes in smaller sports show a steeper improvement curve, suggesting untapped potential if funding is redistributed." color="hsl(38, 80%, 42%)" />
       </DashCard>
     </div>
 
     <div>
-      <SectionHeader title="Challenge #2" subtitle="Athlete Dropout During Transitions" color="hsl(347, 77%, 50%)" />
-      <DashCard title="Dropout Rate by Age Group" icon={<TrendingDown size={18} />} accent="hsl(347, 77%, 50%)" compact>
+      <SectionHeader title="Challenge #2" subtitle="Athlete Dropout During Transitions" color="hsl(6, 60%, 40%)" />
+      <DashCard title="Dropout Rate by Age Group" icon={<TrendingDown size={18} />} accent="hsl(6, 60%, 40%)" compact>
         <p className="text-xs text-muted-foreground mb-4">Comparing competitive vs non-competitive athlete dropout across development stages</p>
         <DropoutCharts />
-        <InsightBox text="The largest dropout spike occurs in mid-development stages, indicating a need for transition support programs." color="hsl(347, 77%, 50%)" />
+        <InsightBox text="The largest dropout spike occurs in mid-development stages, indicating a need for transition support programs." color="hsl(6, 60%, 40%)" />
       </DashCard>
     </div>
 
     <div>
-      <SectionHeader title="Analysis" subtitle="Key Findings" color="hsl(217, 91%, 60%)" />
+      <SectionHeader title="Analysis" subtitle="Key Findings" color="hsl(205, 38%, 36%)" />
       <div className="grid sm:grid-cols-2 gap-4 mt-4">
         {sportsInsights.map((ins, i) => (
           <div key={i} className="rounded-2xl bg-card border border-border p-5 shadow-sm flex gap-4 items-start hover:shadow-md transition-all hover:-translate-y-0.5 hover:border-primary/30">
@@ -359,7 +360,7 @@ const SportsAnalyticsContent = () => (
     </div>
 
     <div>
-      <SectionHeader title="Strategy" subtitle="Recommendations" color="hsl(271, 81%, 56%)" />
+      <SectionHeader title="Strategy" subtitle="Recommendations" color="hsl(24, 45%, 36%)" />
       <div className="grid md:grid-cols-3 gap-4 mt-4">
         {sportsRecommendations.map((r, i) => (
           <div key={i} className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 group">
@@ -376,7 +377,7 @@ const SportsAnalyticsContent = () => (
       </div>
     </div>
 
-    <DashCard title="Tools & Methods" icon={<Wrench size={18} />} accent="hsl(43, 96%, 56%)">
+    <DashCard title="Tools & Methods" icon={<Wrench size={18} />} accent="hsl(38, 80%, 42%)">
       <div className="flex flex-wrap gap-3">
         {sportsTools.map((t) => (
           <span key={t.name} className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-secondary border border-border shadow-sm">
@@ -390,7 +391,7 @@ const SportsAnalyticsContent = () => (
     <img src={sportsPresentation} alt="Sports Analytics Presentation" className="w-full rounded-xl border border-border object-cover max-h-72" loading="lazy" />
 
     <div className="rounded-3xl overflow-hidden relative p-10 md:p-14 text-center"
-      style={{ background: "linear-gradient(135deg, hsl(222, 47%, 14%), hsl(222, 47%, 20%), hsl(43, 96%, 56% / 0.2))" }}>
+      style={{ background: "linear-gradient(135deg, hsl(var(--adv-paper)), hsl(var(--adv-parchment-dark)))", border: "1px solid hsl(var(--adv-leather) / 0.35)" }}>
       <div className="relative z-10">
         <Zap size={32} className="text-primary mx-auto mb-4" />
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Project Impact</h2>
@@ -403,7 +404,7 @@ const SportsAnalyticsContent = () => (
 );
 
 /* ─── Badminton Content ─── */
-const BadmintonContent = () => (
+export const BadmintonContent = () => (
   <div className="space-y-6">
     <div className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-lg">
       <div className="flex items-start gap-4 mb-6">
@@ -444,9 +445,9 @@ const BadmintonContent = () => (
           <p className="text-xs text-muted-foreground mb-2">Logistic regression: longer consecutive scoring runs sharply increase win probability.</p>
           <ResponsiveContainer width="100%" height={220}>
             <ReLineChart data={scoringRunData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" vertical={false} />
-              <XAxis dataKey="run" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} label={{ value: "Consecutive Run", position: "insideBottom", offset: -2, fontSize: 10, fill: "hsl(215,20%,60%)" }} />
-              <YAxis tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[0, 1]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" vertical={false} />
+              <XAxis dataKey="run" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} label={{ value: "Consecutive Run", position: "insideBottom", offset: -2, fontSize: 10, fill: "hsl(28, 18%, 42%)" }} />
+              <YAxis tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[0, 1]} />
               <Tooltip {...tooltipStyle} />
               <Line type="monotone" dataKey="winProb" stroke={CHART_COLORS.gold} strokeWidth={3} dot={{ r: 4, fill: CHART_COLORS.gold }} name="Win Probability" />
             </ReLineChart>
@@ -459,9 +460,9 @@ const BadmintonContent = () => (
           <p className="text-xs text-muted-foreground mb-2">Scatter plot with logistic regression fit line.</p>
           <ResponsiveContainer width="100%" height={220}>
             <ScatterChart margin={{ top: 5, right: 5, left: -10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" />
-              <XAxis dataKey="advantage" type="number" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} name="Advantage" domain={[-10, 10]} />
-              <YAxis dataKey="winProb" type="number" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[0, 1]} name="Win Prob" />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" />
+              <XAxis dataKey="advantage" type="number" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} name="Advantage" domain={[-10, 10]} />
+              <YAxis dataKey="winProb" type="number" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[0, 1]} name="Win Prob" />
               <Tooltip {...tooltipStyle} />
               <Scatter data={gamePointScatter} fill={CHART_COLORS.blue} opacity={0.6} r={3} name="Data Points" />
               <Scatter data={gamePointRegression.map(d => ({ advantage: d.advantage, winProb: d.predicted }))} fill={CHART_COLORS.gold} r={0} line={{ stroke: CHART_COLORS.gold, strokeWidth: 3 }} name="Regression Line" />
@@ -477,9 +478,9 @@ const BadmintonContent = () => (
           <p className="text-xs text-muted-foreground mb-2">Reaching 11 points first in the deciding game strongly predicts match outcome.</p>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={reach11Data}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" vertical={false} />
-              <XAxis dataKey="name" tick={{ fontSize: 9, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[0, 1]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" vertical={false} />
+              <XAxis dataKey="name" tick={{ fontSize: 9, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[0, 1]} />
               <Tooltip {...tooltipStyle} />
               <Bar dataKey="winProb" radius={[6, 6, 0, 0]} name="Win Probability">
                 <Cell fill={CHART_COLORS.emerald} />
@@ -495,9 +496,9 @@ const BadmintonContent = () => (
           <p className="text-xs text-muted-foreground mb-2">Point difference after first 10 points with regression fit.</p>
           <ResponsiveContainer width="100%" height={220}>
             <ScatterChart margin={{ top: 5, right: 5, left: -10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" />
-              <XAxis dataKey="gap" type="number" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} name="Gap" domain={[-8, 8]} />
-              <YAxis dataKey="winProb" type="number" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[0, 1]} name="Win Prob" />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" />
+              <XAxis dataKey="gap" type="number" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} name="Gap" domain={[-8, 8]} />
+              <YAxis dataKey="winProb" type="number" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[0, 1]} name="Win Prob" />
               <Tooltip {...tooltipStyle} />
               <Scatter data={earlyGapScatter} fill={CHART_COLORS.purple} opacity={0.6} r={3} name="Data Points" />
               <Scatter data={earlyGapRegression.map(d => ({ gap: d.gap, winProb: d.predicted }))} fill={CHART_COLORS.gold} r={0} line={{ stroke: CHART_COLORS.gold, strokeWidth: 3 }} name="Regression Line" />
@@ -511,14 +512,14 @@ const BadmintonContent = () => (
         <h4 className="text-sm font-semibold text-foreground mb-2">Fatigue Proxy: Game 1 vs Game 3 Performance (Team 1)</h4>
         <p className="text-xs text-muted-foreground mb-4">Relationship between first game and third game performance, correlation is extremely weak (R = 0.05, R² = 0.00), suggesting no fatigue carry-over effect.</p>
         <div className="flex gap-3 mb-2 text-[11px] text-muted-foreground">
-          <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-[hsl(217,91%,60%)] inline-block" /> Regression line</span>
-          <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 border-t border-dashed border-[hsl(38,92%,50%)] inline-block" /> y = x</span>
+          <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-[hsl(205,38%,36%)] inline-block" /> Regression line</span>
+          <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 border-t border-dashed border-[hsl(30,75%,50%)] inline-block" /> y = x</span>
         </div>
         <ResponsiveContainer width="100%" height={300}>
           <ScatterChart margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" />
-            <XAxis dataKey="game1" type="number" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[5, 30]} name="Game 1 Points" label={{ value: "Team 1 points in Game 1", position: "insideBottom", offset: -10, fontSize: 11, fill: "hsl(215,20%,60%)" }} />
-            <YAxis dataKey="game3" type="number" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[0, 30]} name="Game 3 Points" label={{ value: "Team 1 points in Game 3", angle: -90, position: "insideLeft", offset: 10, fontSize: 11, fill: "hsl(215,20%,60%)" }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" />
+            <XAxis dataKey="game1" type="number" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[5, 30]} name="Game 1 Points" label={{ value: "Team 1 points in Game 1", position: "insideBottom", offset: -10, fontSize: 11, fill: "hsl(28, 18%, 42%)" }} />
+            <YAxis dataKey="game3" type="number" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[0, 30]} name="Game 3 Points" label={{ value: "Team 1 points in Game 3", angle: -90, position: "insideLeft", offset: 10, fontSize: 11, fill: "hsl(28, 18%, 42%)" }} />
             <Tooltip {...tooltipStyle} formatter={(value: number, name: string) => [value, name === "game1" ? "Game 1" : name === "game3" ? "Game 3" : name]} />
             <Scatter data={fatigueScatterData} fill={CHART_COLORS.blue} opacity={0.5} r={3} name="Match Data" />
             {/* Regression line (nearly flat) */}
@@ -557,7 +558,7 @@ const BadmintonContent = () => (
         </table>
       </div>
 
-      <InsightBox text="The start of the game impacts winning probability, each game stands on its own with no momentum carried over between games, and the ability to handle pressure is essential for winning." color="hsl(43, 96%, 56%)" />
+      <InsightBox text="The start of the game impacts winning probability, each game stands on its own with no momentum carried over between games, and the ability to handle pressure is essential for winning." color="hsl(38, 80%, 42%)" />
 
       <div className="mt-6 bg-secondary/50 rounded-xl p-4 border border-border">
         <h4 className="text-sm font-semibold text-foreground mb-3">Critical Evaluation</h4>
@@ -579,15 +580,15 @@ const BadmintonContent = () => (
 );
 
 /* ─── Memory Game Content ─── */
-const MemoryGameContent = () => {
+export const MemoryGameContent = () => {
   const [excludeOutlier, setExcludeOutlier] = useState(false);
   const data = excludeOutlier ? memoryAllParticipants.filter(p => p.focus < 100) : memoryAllParticipants;
   const stats = computeMemoryStats(data);
 
   const COLORS_MEM = {
-    none: "hsl(239, 84%, 67%)",    // Indigo
-    loud: "hsl(38, 92%, 50%)",      // Amber
-    focus: "hsl(160, 84%, 39%)",    // Emerald
+    none: "hsl(330, 28%, 38%)",    // Indigo
+    loud: "hsl(30, 75%, 50%)",      // Amber
+    focus: "hsl(120, 28%, 32%)",    // Emerald
   };
 
   const barData = [
@@ -671,7 +672,7 @@ const MemoryGameContent = () => {
             { label: "Silence (None)", value: `${stats.none.mean.toFixed(2)}s`, color: COLORS_MEM.none, icon: "🔇" },
             { label: "Loud Music", value: `${stats.loud.mean.toFixed(2)}s`, color: COLORS_MEM.loud, icon: "🔊" },
             { label: "Focus Music", value: `${stats.focus.mean.toFixed(2)}s`, color: COLORS_MEM.focus, icon: "🎧" },
-            { label: "Sample Size (N)", value: `${stats.n}`, color: "hsl(215, 20%, 65%)", icon: "👥" },
+            { label: "Sample Size (N)", value: `${stats.n}`, color: "hsl(28, 18%, 48%)", icon: "👥" },
           ].map((kpi) => (
             <div key={kpi.label} className="rounded-2xl bg-secondary/50 border border-border p-5 text-center hover:shadow-md transition-all hover:-translate-y-0.5">
               <span className="text-2xl mb-2 block">{kpi.icon}</span>
@@ -685,7 +686,7 @@ const MemoryGameContent = () => {
         <div className="bg-secondary/50 rounded-xl p-5 border border-border mb-6">
           <div className="flex items-center justify-between mb-4">
             <h4 className="text-sm font-semibold text-foreground">One-Way Repeated Measures ANOVA</h4>
-            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[hsl(38,92%,50%)]/15 text-[hsl(38,92%,50%)]">
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[hsl(30,75%,50%)]/15 text-[hsl(30,75%,50%)]">
               Not Statistically Significant
             </span>
           </div>
@@ -725,9 +726,9 @@ const MemoryGameContent = () => {
             <h4 className="text-sm font-semibold text-foreground mb-3">Average Completion Time (±SE)</h4>
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={barData} margin={{ top: 15, right: 5, left: -10, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" vertical={false} />
-                <XAxis dataKey="condition" tick={{ fontSize: 9, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[0, 75]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" vertical={false} />
+                <XAxis dataKey="condition" tick={{ fontSize: 9, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[0, 75]} />
                 <Tooltip {...tooltipStyle} formatter={(value: number) => [`${value.toFixed(2)} sec`, "Avg Time"]} />
                 <Bar dataKey="avgTime" radius={[8, 8, 0, 0]} barSize={50} name="Avg Time (sec)">
                   {barData.map((d, i) => (
@@ -780,17 +781,17 @@ const MemoryGameContent = () => {
           <p className="text-xs text-muted-foreground mb-3">Average completion time per round across all conditions, no significant learning effect observed.</p>
           <ResponsiveContainer width="100%" height={200}>
             <ReLineChart data={orderEffectData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(222,30%,22%)" vertical={false} />
-              <XAxis dataKey="round" tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 10, fill: "hsl(215,20%,60%)" }} axisLine={false} tickLine={false} domain={[48, 58]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 28%, 80%)" vertical={false} />
+              <XAxis dataKey="round" tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 10, fill: "hsl(28, 18%, 42%)" }} axisLine={false} tickLine={false} domain={[48, 58]} />
               <Tooltip {...tooltipStyle} formatter={(value: number) => [`${value.toFixed(1)} sec`, "Avg Time"]} />
-              <ReferenceLine y={53.4} stroke="hsl(215,20%,40%)" strokeDasharray="4 4" />
+              <ReferenceLine y={53.4} stroke="hsl(28, 25%, 30%)" strokeDasharray="4 4" />
               <Line type="monotone" dataKey="avgTime" stroke={CHART_COLORS.blue} strokeWidth={3} dot={{ r: 5, fill: CHART_COLORS.blue }} name="Avg Time" />
             </ReLineChart>
           </ResponsiveContainer>
         </div>
 
-        <InsightBox text="The ANOVA result (F=1.631, p=0.201) indicates no significant effect of music condition on memory game performance. The 148s outlier in the Focus condition inflates its mean and standard deviation. Counterbalancing confirmed no significant order effects." color="hsl(38, 92%, 50%)" />
+        <InsightBox text="The ANOVA result (F=1.631, p=0.201) indicates no significant effect of music condition on memory game performance. The 148s outlier in the Focus condition inflates its mean and standard deviation. Counterbalancing confirmed no significant order effects." color="hsl(30, 75%, 50%)" />
 
         {/* Prominent Game Link */}
         <a
@@ -800,7 +801,7 @@ const MemoryGameContent = () => {
           className="block mt-6"
         >
           <div className="relative rounded-2xl overflow-hidden p-8 text-center transition-all hover:shadow-xl hover:-translate-y-1"
-            style={{ background: "linear-gradient(135deg, hsl(222, 47%, 14%), hsl(222, 47%, 20%), hsl(271, 81%, 56% / 0.3))" }}>
+            style={{ background: "linear-gradient(135deg, hsl(var(--adv-paper)), hsl(var(--adv-parchment-dark)))", border: "1px solid hsl(var(--adv-leather) / 0.35)" }}>
             <Gamepad2 size={48} className="text-primary mx-auto mb-3" />
             <h3 className="text-2xl font-bold text-foreground mb-2">🎮 Try the Memory Game Yourself!</h3>
             <p className="text-sm text-muted-foreground mb-5">Experience the experiment firsthand, play under different music conditions</p>
@@ -815,7 +816,7 @@ const MemoryGameContent = () => {
 };
 
 /* ─── PCA Content ─── */
-const PCAContent = () => (
+export const PCAContent = () => (
   <div className="space-y-6">
     <div className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-lg">
       <div className="flex items-start gap-4 mb-6">
@@ -907,13 +908,13 @@ const PCAContent = () => (
         </div>
       </div>
 
-      <InsightBox text="The identical accuracy between manual and MATLAB PCA validates our implementation. The eigenfaces technique effectively reduces 1024-dimensional face images to a compact representation while preserving discriminative features for classification." color="hsl(43, 96%, 56%)" />
+      <InsightBox text="The identical accuracy between manual and MATLAB PCA validates our implementation. The eigenfaces technique effectively reduces 1024-dimensional face images to a compact representation while preserving discriminative features for classification." color="hsl(38, 80%, 42%)" />
     </div>
   </div>
 );
 
 /* ─── Social Initiative Content ─── */
-const SocialInitiativeContent = () => (
+export const SocialInitiativeContent = () => (
   <div className="space-y-6">
     <div className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-lg">
       <div className="flex items-start gap-4 mb-6">

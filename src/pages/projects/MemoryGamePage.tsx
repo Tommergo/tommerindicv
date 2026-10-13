@@ -1,11 +1,12 @@
 import JournalProjectPage from "@/components/journal/JournalProjectPage";
+import { MemoryGameContent } from "@/components/portfolio/ProjectsSection";
 import img from "@/assets/projects/memory-game.jpg";
 
 const MemoryGamePage = () => (
   <JournalProjectPage
     project={{
       title: "Memory Game: Music & Attention",
-      stamp: "Expedition File №3",
+      stamp: "Expedition File №4",
       tag: "Controlled Experiment · ANOVA · Statistics",
       image: img,
       goal: "Test a question everyone argues about but few measure: does background music help or hurt concentration? I designed a controlled memory-game experiment to find out.",
@@ -17,6 +18,7 @@ const MemoryGamePage = () => (
       skills: ["Experimental Design", "ANOVA", "Statistical Analysis", "Data Visualization", "Outlier Analysis"],
       outcome: "A statistically grounded answer on music and attention, presented through an interactive dashboard where anyone can explore the data and the ANOVA results themselves.",
     }}
+    evidence={<MemoryGameContent />}
   />
 );
 
