@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Music, CheckCircle2, Server, GraduationCap, Gamepad2 } from "lucide-react";
+import { Briefcase, CheckCircle2, Server, GraduationCap, Gamepad2 } from "lucide-react";
 import redisLogo from "@/assets/redis-logo.png";
 
 const experiences = [
@@ -34,16 +34,6 @@ const experiences = [
     ],
     skills: ["SQL", "Python", "Data Management"],
     logo: redisLogo,
-  },
-  {
-    icon: Music,
-    title: "Manager & Producer, Crocodile Bill",
-    desc: "Independent band.",
-    responsibilities: [
-      "Ran A/B tests on social media post formats and kept the ones that performed",
-      "Run the band end to end: logistics, budget ownership, partner negotiation and promotion",
-    ],
-    skills: ["A/B Testing", "Project Management", "Negotiation"],
   },
 ];
 

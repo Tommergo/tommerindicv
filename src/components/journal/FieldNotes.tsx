@@ -1,28 +1,23 @@
 import { Link } from "react-router-dom";
-import { FileText, Download, Mail, Linkedin, ArrowRight } from "lucide-react";
+import { FileText, Download, ArrowRight } from "lucide-react";
 import imgSports from "@/assets/projects/sports-analytics.jpg";
+import imgMeir from "@/assets/projects/meir-medical.jpg";
 import imgBadminton from "@/assets/projects/badminton-ml.jpg";
 import imgMemory from "@/assets/projects/memory-game.jpg";
 import imgFaces from "@/assets/projects/face-pca.jpg";
-import imgYouth from "@/assets/projects/youth-volunteers.jpg";
-import imgBand from "@/assets/projects/crocodile-bill.jpg";
 
 export const RESUME_PDF = "/Tommer_Goldstein_CV.pdf";
 
 export interface FieldNote { title: string; tag: string; note: string; to: string; img: string }
 
 export const dataProjects: FieldNote[] = [
-  { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgSports },
+  { title: "Operational KPI Analysis, Meir Medical Center", tag: "Python · Tableau · KPIs", note: "Analysed real hospital data with management and found that reporting quality broke down during the war. The hospital built emergency data-collection protocols on the findings.", to: "/projects/meir-medical", img: imgMeir },
   { title: "Sports Data Analytics", tag: "Tableau · Budget vs Results", note: "Analyzed 1,247 athletes and ₪1.43M budget to expose dropout points and pro-conversion gaps.", to: "/projects/sports-analytics", img: imgSports },
   { title: "Badminton Performance Analytics", tag: "Python · Logistic Regression", note: "Used BWF World Tour data to find the in-match moments that decide who wins, and turned them into actions for coaches and players.", to: "/projects/badminton-ml", img: imgBadminton },
   { title: "Memory Game: Music & Attention", tag: "Experiment · ANOVA", note: "Built a memory game and ran a 30-person within-subjects experiment on music and attention, tested with repeated measures ANOVA.", to: "/projects/memory-game", img: imgMemory },
   { title: "Face Data Analysis (PCA)", tag: "ML · Eigenfaces", note: "Implemented PCA from scratch, matched MATLAB's built-in PCA exactly (77.59% accuracy) and classified faces with Nearest Neighbor.", to: "/projects/face-pca", img: imgFaces },
 ];
 
-export const leadershipProjects: FieldNote[] = [
-  { title: "Youth Volunteers Initiative", tag: "Leadership · Ops", note: "Built a training program that prepares National Service volunteers to mentor at-risk youth. The Jerusalem Municipality adopted it.", to: "/leadership#youth", img: imgYouth },
-  { title: "Crocodile Bill", tag: "Band Manager", note: "Manage an independent band: logistics, budget, partners and promotion. Ran A/B tests on social post formats.", to: "/leadership#band", img: imgBand },
-];
 
 const TILTS = [-1.5, 1, -1, 1.5, -1, 1, -1.5];
 
@@ -51,6 +46,12 @@ export const PageHeading = ({ stamp, title, subtitle }: { stamp: string; title: 
   </div>
 );
 
+const STATS = [
+  { value: "60", label: "Students I teach Tableau to" },
+  { value: "95", label: "Final project grade, Meir Medical Center" },
+  { value: "2nd", label: "Place, Shark Tank competition" },
+];
+
 export const ExplorerCard = () => (
   <section className="max-w-3xl mx-auto">
     <div className="text-center mb-8">
@@ -70,10 +71,15 @@ export const ExplorerCard = () => (
       <Link to="/experience" className="adv-btn adv-btn-leather"><FileText size={17} /> See My Experience</Link>
       <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn"><Download size={17} /> Download PDF</a>
     </div>
-    <div className="flex flex-wrap justify-center gap-6 mt-8 font-adv-type text-sm">
-      <a href="mailto:tommer1999@gmail.com" className="inline-flex items-center gap-2 adv-text-gold hover:underline"><Mail size={16} /> tommer1999@gmail.com</a>
-      <a href="https://linkedin.com/in/tommer-goldstein-6784a5248" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 adv-text-gold hover:underline"><Linkedin size={16} /> LinkedIn</a>
+    <div className="grid grid-cols-3 gap-3 md:gap-5 mt-10">
+      {STATS.map((st) => (
+        <div key={st.label} className="adv-paper p-4 text-center">
+          <p className="font-adv-display font-extrabold text-2xl md:text-3xl adv-text-gold">{st.value}</p>
+          <p className="text-xs md:text-sm adv-text-soft mt-1 leading-snug">{st.label}</p>
+        </div>
+      ))}
     </div>
+    <p className="text-center font-adv-type text-sm adv-text-soft mt-6">Available for a full-time, long-term Data Analyst role in Tel Aviv.</p>
   </section>
 );
 

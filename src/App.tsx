@@ -8,7 +8,7 @@ import ScrollManager from "./components/ScrollManager";
 import ExperiencePage from "./pages/SkillsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SportsAnalyticsPage from "./pages/SportsAnalyticsPage";
-import LeadershipPage from "./pages/LeadershipPage";
+import ProjectManagementPage from "./pages/LeadershipPage";
 import NotFound from "./pages/NotFound";
 import ResumePage from "./pages/ResumePage";
 import BadmintonPage from "./pages/projects/BadmintonPage";
@@ -35,7 +35,8 @@ const App = () => (
           <Route path="/projects/badminton-ml" element={<BadmintonPage />} />
           <Route path="/projects/memory-game" element={<MemoryGamePage />} />
           <Route path="/projects/face-pca" element={<FacePcaPage />} />
-          <Route path="/leadership" element={<LeadershipPage />} />
+          <Route path="/management" element={<ProjectManagementPage />} />
+          <Route path="/leadership" element={<Navigate to="/management" replace />} />
           <Route path="/contact" element={<Navigate to="/resume#contact" replace />} />
           <Route path="/resume" element={<ResumePage />} />
           <Route path="/game" element={<Navigate to="/" replace />} />

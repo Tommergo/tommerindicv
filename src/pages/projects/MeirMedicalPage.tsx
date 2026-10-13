@@ -1,5 +1,5 @@
 import JournalProjectPage from "@/components/journal/JournalProjectPage";
-import img from "@/assets/projects/sports-analytics.jpg";
+import img from "@/assets/projects/meir-medical.jpg";
 
 const MeirMedicalPage = () => (
   <JournalProjectPage

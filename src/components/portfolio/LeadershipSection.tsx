@@ -30,7 +30,7 @@ const LeadershipSection = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-3">Leadership & Organizational Experience</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-3">Student Leadership</h2>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">

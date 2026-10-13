@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Sparkles } from "lucide-react";
+import { Mail, Linkedin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () =>
@@ -28,11 +28,6 @@ const ContactSection = () =>
             <a href="https://www.linkedin.com/in/tommer-goldstein-6784a5248/" target="_blank" rel="noopener noreferrer">
               <Linkedin size={18} /> LinkedIn
             </a>
-          </Button>
-          <Button variant="hero-outline" size="lg" asChild>
-            
-
-          
           </Button>
         </div>
       </motion.div>

@@ -13,21 +13,21 @@ const fits = [
     req: "Dashboarding experience (Tableau)",
     proof:
       "Built the Tableau dashboard for Bnei Herzliya's budget-vs-results analysis and the KPI dashboard for Meir Medical Center's senior management. I also teach Tableau at Bar-Ilan.",
-    color: "hsl(var(--amber))",
+    color: "hsl(var(--adv-gold))",
   },
   {
     icon: Gauge,
     req: "Experience with KPI frameworks",
     proof:
       "Defined and presented the KPIs at Meir Medical Center that led the hospital to build emergency data-collection protocols.",
-    color: "hsl(var(--magenta))",
+    color: "hsl(var(--adv-red))",
   },
   {
     icon: FlaskConical,
     req: "Experimentation and A/B tests",
     proof:
       "Ran A/B tests on post formats for my band's social channels and kept the formats that performed. Studied experimental design in my degree.",
-    color: "hsl(var(--violet))",
+    color: "hsl(var(--adv-jungle))",
   },
   {
     icon: Presentation,
@@ -41,7 +41,7 @@ const fits = [
     req: "Python and a gaming mindset",
     proof:
       "Python (pandas, NumPy) for data preparation and analysis. Built a complete 2D browser game in JavaScript, and tested an educational game as a QA tester.",
-    color: "hsl(var(--magenta))",
+    color: "hsl(var(--adv-red))",
   },
 ];
 

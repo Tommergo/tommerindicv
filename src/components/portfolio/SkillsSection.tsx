@@ -14,21 +14,21 @@ const groups = [
     title: "Dashboards & BI",
     subtitle: "Dashboards people actually use",
     skills: ["Tableau", "Dashboard Design", "Data Visualization", "KPI Definition", "KPI Reporting"],
-    color: "hsl(var(--magenta))",
+    color: "hsl(var(--adv-red))",
   },
   {
     icon: FlaskConical,
     title: "Analytics Methods",
     subtitle: "Measure, compare, recommend",
     skills: ["A/B Testing", "Correlation Analysis", "ROI Analysis", "Machine Learning", "PCA"],
-    color: "hsl(var(--violet))",
+    color: "hsl(var(--adv-jungle))",
   },
   {
     icon: Presentation,
     title: "Communication & Delivery",
     subtitle: "Analysis that lands",
     skills: ["Presenting to Leadership", "Teaching Tableau", "Project Management", "Stakeholder Management", "QA Testing"],
-    color: "hsl(var(--amber))",
+    color: "hsl(var(--adv-gold))",
   },
 ];
 

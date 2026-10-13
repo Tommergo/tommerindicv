@@ -5,9 +5,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const links = [
   { label: "Play Game", href: "/" },
-  { label: "Projects", href: "/projects" },
+  { label: "Data Projects", href: "/projects" },
   { label: "Experience", href: "/experience" },
-  { label: "Leadership", href: "/leadership" },
+  { label: "Project Management", href: "/management" },
   { label: "About & Resume", href: "/resume" },
 ];
 
