@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { PageHeading, ICON_BADGE, CHIP } from "@/components/journal/FieldNotes";
 import { CheckCircle2, Server, GraduationCap, Gamepad2 } from "lucide-react";
 import redisLogo from "@/assets/redis-logo.png";
@@ -38,13 +39,18 @@ const experiences = [
   },
 ];
 
-const ExperienceSection = () => (
+const ExperienceSection = () => {
+  const listRef = useRef<HTMLOListElement>(null);
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 75%", "end 60%"] });
+  const drawn = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
+  return (
   <section id="experience" className="section-padding">
     <div className="container mx-auto px-4">
       <PageHeading stamp="Expedition Log" title="EXPERIENCE" subtitle="Where I have worked, and what I did there" />
 
-      <ol className="relative max-w-3xl mx-auto">
-        <span aria-hidden="true" className="absolute left-[21px] top-2 bottom-2 border-l-2 border-dashed border-[hsl(var(--adv-leather)/0.45)]" />
+      <ol ref={listRef} className="relative max-w-3xl mx-auto">
+        <span aria-hidden="true" className="absolute left-[21px] top-2 bottom-2 border-l-2 border-dashed border-[hsl(var(--adv-leather)/0.2)]" />
+        <motion.span aria-hidden="true" style={{ scaleY: drawn }} className="absolute left-[21px] top-2 bottom-2 origin-top border-l-2 border-dashed border-[hsl(var(--adv-red)/0.7)]" />
         {experiences.map((exp, i) => (
           <motion.li
             key={exp.title}
@@ -89,6 +95,7 @@ const ExperienceSection = () => (
       </ol>
     </div>
   </section>
-);
+  );
+};
 
 export default ExperienceSection;

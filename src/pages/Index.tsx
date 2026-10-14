@@ -140,7 +140,13 @@ const PlayTab = () => {
         I designed and built this whole game myself, using modern AI tools for the soundtrack and the art, to push my creativity and learn fast.
       </p>
 
-      <div className="adv-paper relative max-w-3xl mx-auto mt-12 p-6 md:p-8 text-center">
+      <motion.div
+        className="adv-paper relative max-w-3xl mx-auto mt-12 p-6 md:p-8 text-center"
+        initial={{ opacity: 0, y: 50, rotate: 1.5 }}
+        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+        viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+        transition={{ type: "spring", stiffness: 130, damping: 18 }}
+      >
         <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2" aria-hidden="true" />
         <p className="font-adv-type text-xs tracking-widest uppercase text-[hsl(var(--adv-red))]">The explorer behind the game</p>
         <h2 className="font-adv-display font-extrabold text-2xl md:text-3xl mt-2">Tommer Goldstein · Data Analyst, Gaming</h2>
@@ -151,7 +157,7 @@ const PlayTab = () => {
           <Link to="/projects" className="adv-btn"><BarChart3 size={17} /> See the Data Work</Link>
           <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn adv-btn-leather"><Download size={17} /> Download CV</a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

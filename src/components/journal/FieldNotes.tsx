@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Download, ArrowRight, Languages } from "lucide-react";
 import { motion } from "framer-motion";
-import { DevelopImg, CountUp } from "@/components/journal/motion";
+import { DevelopImg, CountUp, InkUnderline } from "@/components/journal/motion";
+import { launchFlight } from "@/components/journal/heroFlight";
 import imgSports from "@/assets/projects/sports-analytics.jpg";
 import imgMeir from "@/assets/projects/meir-medical.jpg";
 import imgBadminton from "@/assets/projects/badminton-ml.jpg";
@@ -38,6 +39,7 @@ export const PolaroidGrid = ({ items }: { items: FieldNote[] }) => (
         >
           <Link
             to={p.to}
+            onClick={(e) => launchFlight(e.currentTarget.querySelector("img"))}
             className="adv-paper relative flex flex-col p-4 pb-5 w-full [transform:rotate(var(--tilt))] hover:[transform:translateY(-8px)_rotate(0deg)] hover:shadow-[0_14px_30px_hsl(var(--adv-leather-dark)/0.35)] transition-[transform,box-shadow] duration-300"
             style={{ "--tilt": `${tilt}deg` } as React.CSSProperties}
           >
@@ -73,6 +75,7 @@ export const PageHeading = ({ stamp, title, subtitle, level = 1 }: { stamp: stri
       <span className="adv-stamp">{stamp}</span>
       <H className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4 mb-2">{title}</H>
       {subtitle && <p className="font-adv-type adv-text-soft text-sm md:text-base">{subtitle}</p>}
+      <InkUnderline className="mt-3" />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect, useId, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { RevealScope } from "@/components/journal/motion";
 
 interface CaseFileProps {
   id: string;
@@ -25,7 +26,14 @@ const CaseFile = ({ id, stamp, title, subtitle, teaser, thumb, children }: CaseF
   }, [hash, id]);
 
   return (
-    <article id={id} className="adv-paper relative scroll-mt-24">
+    <motion.article
+      id={id}
+      className="adv-paper relative scroll-mt-24"
+      initial={{ opacity: 0, y: 40, rotate: -1.2 }}
+      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+      viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+      transition={{ type: "spring", stiffness: 140, damping: 20 }}
+    >
       <div className="adv-tape absolute -top-3 left-8 z-10 !w-20 !h-5" aria-hidden="true" />
       <button
         type="button"
@@ -61,12 +69,12 @@ const CaseFile = ({ id, stamp, title, subtitle, teaser, thumb, children }: CaseF
             className="overflow-hidden"
           >
             <div className="px-5 md:px-7 pb-7 pt-1 border-t border-dashed border-[hsl(var(--adv-leather)/0.35)]">
-              <div className="pt-6">{children}</div>
+              <RevealScope className="pt-6">{children}</RevealScope>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </article>
+    </motion.article>
   );
 };
 

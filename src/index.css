@@ -244,3 +244,22 @@ html {
   padding: 3px 10px; text-transform: uppercase; transform: rotate(-2deg); display: inline-block;
 }
 .adv-divider { height: 2px; background: repeating-linear-gradient(90deg, hsl(var(--adv-leather) / 0.5) 0 10px, transparent 10px 18px); }
+
+/* Open journal: two pages with a stitched gutter (desktop only) */
+@media (min-width: 768px) {
+  .adv-spread {
+    background:
+      linear-gradient(90deg, transparent calc(52.4% - 18px), hsl(var(--adv-leather) / 0.16) 52.4%, transparent calc(52.4% + 18px)),
+      hsl(var(--adv-paper));
+    border: 1px solid hsl(var(--adv-leather) / 0.35); border-radius: 6px;
+    box-shadow: 0 1px 0 hsl(45 80% 98%) inset, 0 18px 36px -16px hsl(var(--adv-leather-dark) / 0.6);
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+}
+
+/* Scroll reveal for blocks inside Field Evidence (set up by useScrollReveal) */
+[data-reveal] { transition: opacity 0.7s ease-out, translate 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+[data-reveal="hidden"] { opacity: 0; translate: 0 28px; }
+[data-reveal="hidden"][data-reveal-side="l"] { translate: -36px 12px; }
+[data-reveal="hidden"][data-reveal-side="r"] { translate: 36px 12px; }
+@media (prefers-reduced-motion: reduce) { [data-reveal="hidden"] { opacity: 1; translate: none; } }
