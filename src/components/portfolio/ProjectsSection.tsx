@@ -6,10 +6,10 @@ import {
   DollarSign, Activity, TrendingUp, ArrowUpRight, ArrowDownRight, Zap, ChevronRight, ExternalLink,
 } from "lucide-react";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart as ReLineChart, Line, Legend, ScatterChart, Scatter, ZAxis,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, LineChart as ReLineChart, Line, Legend, ScatterChart, Scatter, ZAxis,
   AreaChart, Area, ReferenceLine,
 } from "recharts";
+import { ResponsiveContainer, CountUp } from "@/components/journal/motion";
 import sportsPresentation from "@/assets/sports-presentation.jpeg";
 import youthInitiative from "@/assets/youth-initiative.jpeg";
 import faceMeanPhotos from "@/assets/face-mean-photos.png";
@@ -289,7 +289,7 @@ export const SportsAnalyticsContent = () => (
               {k.trend}
             </span>
           </div>
-          <p className="text-2xl font-bold text-foreground">{k.value}</p>
+          <p className="text-2xl font-bold text-foreground"><CountUp value={k.value} /></p>
           <p className="text-xs text-muted-foreground mt-0.5">{k.label}</p>
         </div>
       ))}
@@ -676,7 +676,7 @@ export const MemoryGameContent = () => {
           ].map((kpi) => (
             <div key={kpi.label} className="rounded-2xl bg-secondary/50 border border-border p-5 text-center hover:shadow-md transition-all hover:-translate-y-0.5">
               <span className="text-2xl mb-2 block">{kpi.icon}</span>
-              <p className="text-2xl font-bold text-foreground">{kpi.value}</p>
+              <p className="text-2xl font-bold text-foreground"><CountUp value={kpi.value} /></p>
               <p className="text-xs text-muted-foreground mt-1">{kpi.label}</p>
             </div>
           ))}
@@ -693,11 +693,11 @@ export const MemoryGameContent = () => {
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div className="text-center p-4 rounded-xl bg-card border border-border">
               <p className="text-xs text-muted-foreground mb-1">F-statistic</p>
-              <p className="text-3xl font-bold text-foreground">1.631</p>
+              <p className="text-3xl font-bold text-foreground"><CountUp value="1.631" /></p>
             </div>
             <div className="text-center p-4 rounded-xl bg-card border border-border">
               <p className="text-xs text-muted-foreground mb-1">p-value</p>
-              <p className="text-3xl font-bold text-foreground">0.201</p>
+              <p className="text-3xl font-bold text-foreground"><CountUp value="0.201" /></p>
             </div>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">

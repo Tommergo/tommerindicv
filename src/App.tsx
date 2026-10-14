@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollManager from "./components/ScrollManager";
+import RouteProgress from "./components/journal/RouteProgress";
+import { MotionConfig } from "framer-motion";
 import ExperiencePage from "./pages/SkillsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SportsAnalyticsPage from "./pages/SportsAnalyticsPage";
@@ -20,11 +22,13 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <MotionConfig reducedMotion="user">
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
         <ScrollManager />
+        <RouteProgress />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/experience" element={<ExperiencePage />} />
@@ -44,6 +48,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    </MotionConfig>
   </QueryClientProvider>
 );
 

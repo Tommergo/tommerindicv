@@ -29,7 +29,7 @@ const experiences = [
     title: "Help Desk & System Administrator, Redis",
     desc: "Global high-tech company. Site-wide technical support across departments and R&D.",
     responsibilities: [
-      "Wrote SQL daily against user data to find duplicates and anomalies",
+      "Used SQL queries and Excel on user data in the IT department to find duplicate accounts and anomalies",
       "Used Python to automate repetitive work",
       "Managed user accounts, permissions and access",
     ],
@@ -54,13 +54,19 @@ const ExperienceSection = () => (
             transition={{ delay: i * 0.1 }}
             className="relative pl-16 pb-10 last:pb-0"
           >
-            <div className={`${ICON_BADGE} absolute left-0 top-1 overflow-hidden`}>
+            <motion.div
+              className={`${ICON_BADGE} absolute left-0 top-1 overflow-hidden`}
+              initial={{ y: -60, scale: 1.35, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 380, damping: 14, delay: i * 0.1 + 0.15 }}
+            >
               {"logo" in exp && exp.logo ? (
                 <img src={exp.logo} alt="" className="w-7 h-7 object-contain" />
               ) : (
                 <exp.icon size={20} />
               )}
-            </div>
+            </motion.div>
             <div className="adv-paper p-6 md:p-7">
               <h3 className="font-adv-display font-bold text-xl mb-1 leading-snug">{exp.title}</h3>
               <p className="font-adv-type adv-text-soft text-sm mb-4">{exp.desc}</p>

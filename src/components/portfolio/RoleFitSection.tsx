@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { PageHeading, ICON_BADGE } from "@/components/journal/FieldNotes";
+import { InkCheck } from "@/components/journal/motion";
 import { Database, LayoutDashboard, Gauge, FlaskConical, Presentation, Code2 } from "lucide-react";
 
 const fits = [
   {
     icon: Database,
     req: "Strong SQL",
-    proof: "Wrote SQL daily at Redis against user data to find duplicates and anomalies.",
+    proof: "Used SQL queries and Excel at Redis on user data to find duplicate accounts and anomalies.",
     color: "hsl(var(--primary))",
   },
   {
@@ -63,7 +64,8 @@ const RoleFitSection = () => (
           >
             <div className="flex items-center gap-3 mb-4 pb-3 border-b border-dashed border-[hsl(var(--adv-leather)/0.3)]">
               <div className={ICON_BADGE}><f.icon size={20} /></div>
-              <h3 className="font-adv-display font-bold text-lg leading-snug">{f.req}</h3>
+              <h3 className="font-adv-display font-bold text-lg leading-snug flex-1">{f.req}</h3>
+              <InkCheck delay={0.35 + i * 0.07} />
             </div>
             <p className="adv-text-soft text-base leading-relaxed">{f.proof}</p>
           </motion.div>

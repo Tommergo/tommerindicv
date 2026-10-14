@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Download, ArrowRight, Languages } from "lucide-react";
+import { motion } from "framer-motion";
+import { DevelopImg, CountUp } from "@/components/journal/motion";
 import imgSports from "@/assets/projects/sports-analytics.jpg";
 import imgMeir from "@/assets/projects/meir-medical.jpg";
 import imgBadminton from "@/assets/projects/badminton-ml.jpg";
@@ -23,30 +25,41 @@ const TILTS = [-1.5, 1, -1, 1.5, -1, 1, -1.5];
 
 export const PolaroidGrid = ({ items }: { items: FieldNote[] }) => (
   <div className="flex flex-wrap justify-center gap-8">
-    {items.map((p, i) => (
-      <Link
-        key={p.title}
-        to={p.to}
-        className="adv-paper relative flex flex-col p-4 pb-5 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] hover:-translate-y-1.5 transition-transform duration-200"
-        style={{ transform: `rotate(${TILTS[i % TILTS.length]}deg)` }}
-      >
-        <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" />
-        <div className="aspect-[4/3] overflow-hidden rounded-sm border border-[hsl(var(--adv-leather)/0.35)] mb-4">
-          <img src={p.img} alt={p.title} loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
-        </div>
-        <h3 className="font-adv-display font-bold text-xl leading-snug mb-2">{p.title}</h3>
-        <p className="text-base adv-text-soft leading-relaxed mb-4">{p.note}</p>
-        <div className="mt-auto">
-          <p className="font-adv-display font-bold text-xs tracking-widest uppercase text-[hsl(var(--adv-red))] mb-2">Skills</p>
-          <div className="flex flex-wrap gap-1.5 mb-4">
-            {p.tag.split("·").map((t) => (
-              <span key={t} className="font-adv-type text-xs px-2 py-1 rounded border border-[hsl(var(--adv-leather)/0.4)] bg-[hsl(var(--adv-parchment-dark))]">{t.trim()}</span>
-            ))}
-          </div>
-          <span className="inline-flex items-center gap-1.5 font-adv-display font-bold text-sm tracking-wider adv-text-gold uppercase">Open File <ArrowRight size={14} /></span>
-        </div>
-      </Link>
-    ))}
+    {items.map((p, i) => {
+      const tilt = TILTS[i % TILTS.length];
+      return (
+        <motion.div
+          key={p.title}
+          className="flex w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+          initial={{ opacity: 0, y: -46, x: i % 2 ? 30 : -30, rotate: tilt * 5, scale: 1.04 }}
+          whileInView={{ opacity: 1, y: 0, x: 0, rotate: 0, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+          transition={{ type: "spring", stiffness: 170, damping: 19, delay: (i % 3) * 0.12 }}
+        >
+          <Link
+            to={p.to}
+            className="adv-paper relative flex flex-col p-4 pb-5 w-full [transform:rotate(var(--tilt))] hover:[transform:translateY(-8px)_rotate(0deg)] hover:shadow-[0_14px_30px_hsl(var(--adv-leather-dark)/0.35)] transition-[transform,box-shadow] duration-300"
+            style={{ "--tilt": `${tilt}deg` } as React.CSSProperties}
+          >
+            <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" />
+            <div className="aspect-[4/3] overflow-hidden rounded-sm border border-[hsl(var(--adv-leather)/0.35)] mb-4">
+              <DevelopImg src={p.img} alt={p.title} loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
+            </div>
+            <h3 className="font-adv-display font-bold text-xl leading-snug mb-2">{p.title}</h3>
+            <p className="text-base adv-text-soft leading-relaxed mb-4">{p.note}</p>
+            <div className="mt-auto">
+              <p className="font-adv-display font-bold text-xs tracking-widest uppercase text-[hsl(var(--adv-red))] mb-2">Skills</p>
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {p.tag.split("·").map((t) => (
+                  <span key={t} className="font-adv-type text-xs px-2 py-1 rounded border border-[hsl(var(--adv-leather)/0.4)] bg-[hsl(var(--adv-parchment-dark))]">{t.trim()}</span>
+                ))}
+              </div>
+              <span className="inline-flex items-center gap-1.5 font-adv-display font-bold text-sm tracking-wider adv-text-gold uppercase">Open File <ArrowRight size={14} /></span>
+            </div>
+          </Link>
+        </motion.div>
+      );
+    })}
   </div>
 );
 
@@ -76,7 +89,14 @@ export const ExplorerCard = () => (
       <span className="adv-stamp">Personnel File</span>
       <h2 className="adv-title font-adv-display font-extrabold text-2xl md:text-4xl mt-4">THE EXPLORER</h2>
     </div>
-    <div className="adv-paper p-6 md:p-10 relative">
+    <motion.div
+      className="adv-paper p-6 md:p-10 relative"
+      style={{ transformOrigin: "left center", transformPerspective: 1200 }}
+      initial={{ rotateY: -70, opacity: 0 }}
+      whileInView={{ rotateY: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2" />
       <p className="text-base md:text-lg leading-relaxed">
         Hi, I'm <strong>Tommer Goldstein</strong>, a fourth-year Industrial Engineering and Information Systems student at
@@ -84,14 +104,14 @@ export const ExplorerCard = () => (
         people who decide. I also build games in my own time: I designed and shipped this one from scratch.
         I'm looking for a Data Analyst role in gaming.
       </p>
-    </div>
+    </motion.div>
     <div className="flex flex-wrap justify-center gap-4 mt-10">
       <a href={RESUME_PDF} download="Tommer_Goldstein_CV.pdf" className="adv-btn"><Download size={17} /> Download PDF</a>
     </div>
     <div className="grid grid-cols-3 gap-3 md:gap-5 mt-10">
       {STATS.map((st) => (
         <div key={st.label} className="adv-paper p-4 text-center">
-          <p className="font-adv-display font-extrabold text-2xl md:text-3xl adv-text-gold">{st.value}</p>
+          <p className="font-adv-display font-extrabold text-2xl md:text-3xl adv-text-gold"><CountUp value={st.value} /></p>
           <p className="text-xs md:text-sm adv-text-soft mt-1 leading-snug">{st.label}</p>
         </div>
       ))}

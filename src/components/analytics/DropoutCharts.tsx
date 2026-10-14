@@ -1,4 +1,5 @@
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { ResponsiveContainer } from "@/components/journal/motion";
 
 const makeData = (compBase: number[], nonCompBase: number[]) =>
   compBase.map((v, i) => ({

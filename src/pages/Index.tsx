@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Volume2, VolumeX, Maximize, Minimize, HelpCircle, Play, X, Compass, BarChart3, Download } from "lucide-react";
@@ -94,7 +95,14 @@ const PlayTab = () => {
             <iframe ref={iframeRef} src={GAME_URL} title="Indiana Jones and the Call of Cthulhu" className="w-full h-full" allow="fullscreen; autoplay; gamepad" allowFullScreen onLoad={onGameLoad} />
           ) : (
             <button onClick={() => setStarted(true)} className="absolute inset-0 flex flex-col items-center justify-center gap-6 group">
-              <Compass size={44} className="text-[hsl(var(--adv-gold-light))] group-hover:rotate-45 transition-transform duration-500" />
+              <motion.span
+                className="inline-flex"
+                initial={{ rotate: -160 }}
+                animate={{ rotate: [-160, 50, -25, 12, -5, 0] }}
+                transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+              >
+                <Compass size={44} className="text-[hsl(var(--adv-gold-light))] group-hover:rotate-45 transition-transform duration-500" />
+              </motion.span>
               <span className="adv-btn text-sm md:text-base"><Play size={18} /> Start the Adventure</span>
               <span className="font-adv-type text-sm text-[hsl(var(--adv-parchment)/0.8)]">Click to enter the temple</span>
             </button>

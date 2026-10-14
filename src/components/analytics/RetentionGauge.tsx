@@ -1,4 +1,5 @@
-import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import { RadialBarChart, RadialBar } from "recharts";
+import { ResponsiveContainer } from "@/components/journal/motion";
 
 const data = [
   { name: "Retention", value: 66, fill: "hsl(205, 38%, 36%)" },

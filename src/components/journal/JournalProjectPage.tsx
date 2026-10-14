@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Target, Wrench, BookOpen, Award, Search } from "lucide-react";
 import Navbar from "@/components/portfolio/Navbar";
 import Footer from "@/components/portfolio/Footer";
+import { DevelopImg, Stamp } from "@/components/journal/motion";
 
 export interface JournalProject {
   title: string;
@@ -20,8 +21,9 @@ interface JournalProps {
   backTo?: { href: string; label: string };
 }
 
-const Section = ({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) => (
-  <div className="adv-paper p-6 md:p-8">
+const Section = ({ icon, title, children, extra }: { icon: React.ReactNode; title: string; children: React.ReactNode; extra?: React.ReactNode }) => (
+  <div className="adv-paper relative p-6 md:p-8">
+    {extra}
     <h2 className="font-adv-display font-bold text-lg md:text-xl flex items-center gap-3 mb-4">
       <span className="adv-text-gold">{icon}</span> {title}
     </h2>
@@ -47,7 +49,7 @@ const JournalProjectPage = ({ project, evidence, backTo = { href: "/projects", l
         <div className="adv-paper p-4 pb-5 mb-8 relative" style={{ transform: "rotate(-1deg)" }}>
           <div className="adv-tape absolute -top-3 left-1/2 -translate-x-1/2 z-10" />
           <div className="aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-sm border border-[hsl(var(--adv-leather)/0.35)]">
-            <img src={project.image} alt={project.title} width={1024} height={768} className="w-full h-full object-cover" />
+            <DevelopImg src={project.image} alt={project.title} width={1024} height={768} className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -74,7 +76,7 @@ const JournalProjectPage = ({ project, evidence, backTo = { href: "/projects", l
             </div>
           </Section>
 
-          <Section icon={<Award size={20} />} title="The Relic Found">
+          <Section icon={<Award size={20} />} title="The Relic Found" extra={<Stamp className="absolute top-4 right-4 md:top-5 md:right-6 text-sm md:text-lg">Found</Stamp>}>
             <p className="text-base md:text-lg leading-relaxed adv-text-soft">{project.outcome}</p>
           </Section>
         </div>

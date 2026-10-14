@@ -4,6 +4,8 @@ import bandLive from "@/assets/band-live.png";
 import bandEvent from "@/assets/band-event.jpeg";
 import barIlanStage from "@/assets/bar-ilan-stage.jpeg";
 import cover from "@/assets/projects/crocodile-bill-inc.jpg";
+import { motion } from "framer-motion";
+import { DevelopImg } from "@/components/journal/motion";
 
 const services = [
   { icon: Music, title: "Live music", desc: "Shows by the blues, soul and funk band Crocodile Bill, where I am manager and guitarist." },
@@ -27,9 +29,24 @@ const photos = [
 const CrocodileBillSection = () => (
   <div>
     <div className="flex flex-wrap gap-2 mb-6">
-      <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
-        <BadgeCheck size={16} className="adv-text-gold" /> Registered business in Israel
-      </div>
+      <motion.div
+        className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]"
+        initial={{ scale: 1.9, rotate: -10, opacity: 0 }}
+        whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.2 }}
+      >
+        <motion.span
+          className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[hsl(var(--adv-red))] text-[hsl(var(--adv-gold-light))] shadow-[inset_0_-2px_3px_rgba(0,0,0,0.35),0_1px_3px_rgba(0,0,0,0.3)]"
+          initial={{ scale: 0 }}
+          whileInView={{ scale: [0, 1.25, 1] }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: 0.55 }}
+        >
+          <BadgeCheck size={15} />
+        </motion.span>
+        Registered business in Israel
+      </motion.div>
       <div className="inline-flex items-center gap-2 font-adv-display font-bold text-sm px-4 py-2 rounded border border-[hsl(var(--adv-gold)/0.6)] bg-[hsl(var(--adv-gold-light)/0.18)]">
         <CalendarDays size={16} className="adv-text-gold" /> About 3 events a month
       </div>
@@ -40,7 +57,7 @@ const CrocodileBillSection = () => (
     </p>
 
     <figure className="adv-paper p-3 pb-4 mb-8 relative" style={{ transform: "rotate(-0.6deg)" }}>
-      <img src={cover} alt="Crocodile Bill Inc. field journal: concert, logistics and A/B testing" width={1024} height={739} loading="lazy" className="w-full h-auto rounded-sm border border-[hsl(var(--adv-leather)/0.35)]" />
+      <DevelopImg src={cover} alt="Crocodile Bill Inc. field journal: concert, logistics and A/B testing" width={1024} height={739} loading="lazy" className="w-full h-auto rounded-sm border border-[hsl(var(--adv-leather)/0.35)]" />
     </figure>
 
     <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -69,7 +86,7 @@ const CrocodileBillSection = () => (
 
     <div className="grid grid-cols-2 gap-4">
       {photos.map((p) => (
-        <img key={p.alt} src={p.src} alt={p.alt} className="w-full rounded-sm object-cover aspect-square border border-[hsl(var(--adv-leather)/0.35)]" loading="lazy" />
+        <DevelopImg key={p.alt} src={p.src} alt={p.alt} className="w-full rounded-sm object-cover aspect-square border border-[hsl(var(--adv-leather)/0.35)]" loading="lazy" />
       ))}
     </div>
   </div>
